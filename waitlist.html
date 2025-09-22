@@ -1,0 +1,1152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join Bagxtra Waitlist - AI-Powered Cross-Border Logistics</title>
+    
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #30083e;
+            --primary-dark: #6c0e78;
+            --text-dark: #0A0A0A;
+            --text-gray: #6B6B6B;
+            --text-light: #9B9B9B;
+            --bg-white: #FFFFFF;
+            --bg-gray: #FAFAFA;
+            --border: #E8E8E8;
+            --success: #10B981;
+            --warning: #F59E0B;
+            --gradient: linear-gradient(135deg, var(--primary) 0%, #730284 100%);
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: var(--text-dark);
+            font-weight: 400;
+        }
+
+        /* Navigation */
+        .navbar {
+            backdrop-filter: blur(20px);
+            background: rgba(255, 255, 255, 0.95) !important;
+            border-bottom: 1px solid var(--border);
+            padding: 1rem 0;
+        }
+
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-dark) !important;
+        }
+
+        .nav-back {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.95rem;
+            transition: color 0.2s ease;
+        }
+
+        .nav-back:hover {
+            color: var(--text-dark);
+        }
+
+        /* Hero Section */
+        .hero {
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            padding: 8rem 0 4rem;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="50" cy="50" r="1" fill="rgba(255,255,255,0.1)"/></svg>') repeat;
+            opacity: 0.3;
+        }
+
+        .hero-container {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero-badge {
+            display: inline-block;
+            background: rgba(219, 218, 219, 0.2);
+            backdrop-filter: blur(10px);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            margin-bottom: 2rem;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+
+        .hero h1 {
+            font-size: clamp(2.5rem, 5vw, 3.5rem);
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            letter-spacing: -0.02em;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(1rem, 2.5vw, 1.25rem);
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+
+        .stats-bar {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 3rem;
+            flex-wrap: wrap;
+        }
+
+        .stat-item {
+            text-align: center;
+            min-width: 120px;
+        }
+
+        .stat-number {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 700;
+            display: block;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Form Section */
+        .form-container {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.08);
+            position: sticky;
+            top: 100px;
+        }
+
+        .form-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .form-subtitle {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .form-control, .form-select {
+            padding: 0.75rem 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+        }
+
+        .form-control:focus, .form-select:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 0.2rem rgba(48, 8, 62, 0.1);
+        }
+
+        .form-check-input:checked {
+            background-color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .submit-button {
+            background: var(--primary);
+            color: white;
+            padding: 1rem;
+            border: none;
+            border-radius: 8px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            width: 100%;
+        }
+
+        .submit-button:hover {
+            background: var(--primary-dark);
+            transform: translateY(-1px);
+            box-shadow: 0 8px 24px rgba(64, 1, 87, 0.3);
+        }
+
+        .submit-button:disabled {
+            background: var(--text-light);
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        /* Benefits Cards */
+        .benefit-card {
+            background: var(--bg-gray);
+            padding: 2rem;
+            border-radius: 12px;
+            border: 1px solid var(--border);
+            transition: all 0.2s ease;
+            height: 100%;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.1);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .benefit-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+
+        .benefit-description {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* Feature Items */
+        .feature-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 1rem;
+            padding: 1.5rem;
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            margin-bottom: 1rem;
+        }
+
+        .feature-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--primary);
+            color: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.25rem;
+            flex-shrink: 0;
+        }
+
+        /* Urgency Section */
+        .urgency-section {
+            background: #FFF3CD;
+            border: 1px solid #FFC107;
+            border-radius: 8px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .urgency-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #B45309;
+            margin-bottom: 0.5rem;
+        }
+
+        .urgency-text {
+            color: #92400E;
+            font-size: 0.95rem;
+        }
+
+        /* Testimonials */
+        .testimonial-card {
+            background: white;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 2rem;
+            height: 100%;
+        }
+
+        .testimonial-text {
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--text-gray);
+        }
+
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--text-dark);
+        }
+
+        .testimonial-role {
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        /* FAQ Section */
+        .faq-item {
+            margin-bottom: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .faq-question {
+            padding: 1.5rem;
+            background: var(--bg-gray);
+            font-weight: 600;
+            cursor: pointer;
+            transition: background 0.2s ease;
+            margin: 0;
+            border: none;
+            width: 100%;
+            text-align: left;
+        }
+
+        .faq-question:hover {
+            background: #F1F1F1;
+        }
+
+        .faq-answer {
+            padding: 0 1.5rem 1.5rem;
+            color: var(--text-gray);
+            display: none;
+        }
+
+        .faq-answer.active {
+            display: block;
+        }
+
+        /* Success State */
+        .success-state {
+            display: none;
+            text-align: center;
+            padding: 3rem;
+            background: #F0FDF4;
+            border: 1px solid var(--success);
+            border-radius: 12px;
+        }
+
+        .success-state.active {
+            display: block;
+        }
+
+        .success-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+
+        .success-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--success);
+            margin-bottom: 1rem;
+        }
+
+        .success-text {
+            color: #059669;
+        }
+
+        /* Mobile Specific Styles */
+        @media (max-width: 768px) {
+            .hero {
+                padding: 6rem 0 3rem;
+            }
+            
+            .hero-badge {
+                font-size: 0.8rem;
+                padding: 0.4rem 0.8rem;
+            }
+            
+            .stats-bar {
+                gap: 1rem;
+            }
+            
+            .stat-item {
+                min-width: 100px;
+            }
+            
+            .form-container {
+                position: static;
+                top: auto;
+                margin-bottom: 2rem;
+            }
+            
+            .benefit-card {
+                padding: 1.5rem;
+            }
+            
+            .feature-item {
+                padding: 1rem;
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
+            
+            .feature-icon {
+                align-self: center;
+            }
+        }
+
+        @media (max-width: 576px) {
+            .hero {
+                padding: 5rem 0 2rem;
+            }
+            
+            .stats-bar {
+                flex-direction: column;
+                gap: 1.5rem;
+                margin-top: 2rem;
+            }
+            
+            .form-container {
+                padding: 1.5rem;
+            }
+            
+            .benefit-card {
+                padding: 1.25rem;
+            }
+            
+            .feature-item {
+                padding: 1rem;
+            }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        /* Utility Classes */
+        .text-primary-custom {
+            color: var(--primary) !important;
+        }
+
+        .bg-primary-custom {
+            background-color: var(--primary) !important;
+        }
+
+        .section-spacing {
+            padding: 4rem 0;
+        }
+
+        @media (max-width: 768px) {
+            .section-spacing {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="#">Bagxtra</a>
+            <a href="index.html" class="nav-back ms-auto" onclick="window.history.back()">
+                <i class="bi bi-arrow-left"></i> Back to Main Site
+            </a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container hero-container">
+            <div class="hero-badge">Limited Time Offer - First 500 Members Only</div>
+            <h1>Join the AI Revolution</h1>
+            <p class="hero-subtitle">Be among the founding members of the world's first AI-powered cross-border peer-to-peer logistics platform. Shape the future of international delivery while securing exclusive lifetime benefits.</p>
+            
+            <div class="stats-bar">
+                <div class="stat-item">
+                    <span class="stat-number" id="waitlistCount">2,847</span>
+                    <span class="stat-label">Members Joined</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">153</span>
+                    <span class="stat-label">Spots Remaining</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number">30%</span>
+                    <span class="stat-label">Founder Discount</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <section class="section-spacing">
+        <div class="container">
+            <div class="row">
+                <!-- Left Column - Information (Mobile: Shows second) -->
+                <div class="col-lg-8 order-lg-1 order-2">
+                    <!-- Exclusive Benefits Section -->
+                    <div class="mb-5">
+                        <h2 class="display-6 fw-bold mb-3">Exclusive Founder Benefits</h2>
+                        <p class="lead text-muted mb-4">As a founding member, you'll receive unprecedented access and benefits that will never be offered again.</p>
+                        
+                        <div class="row g-3">
+                            <div class="col-md-6">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🚀</div>
+                                    <h3 class="benefit-title">VIP Priority Access</h3>
+                                    <p class="benefit-description">Skip all waiting lists and get immediate access when we launch in Q2 2026</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">💰</div>
+                                    <h3 class="benefit-title">30% Lifetime Discount</h3>
+                                    <p class="benefit-description">Save 30% on all premium features forever - worth $500+ annually</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">👑</div>
+                                    <h3 class="benefit-title">Founder Status Badge</h3>
+                                    <p class="benefit-description">Permanent recognition with exclusive founder badge and profile benefits</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🎯</div>
+                                    <h3 class="benefit-title">Beta Access</h3>
+                                    <p class="benefit-description">Test cutting-edge AI features 60 days before public release</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">💝</div>
+                                    <h3 class="benefit-title">Exclusive Welcome Kit</h3>
+                                    <p class="benefit-description">Premium Bagxtra merchandise + $100 platform credits</p>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="benefit-card">
+                                    <div class="benefit-icon">🤝</div>
+                                    <h3 class="benefit-title">Direct CEO Access</h3>
+                                    <p class="benefit-description">Monthly founder calls and direct influence on product roadmap</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="urgency-section">
+                            <h3 class="urgency-title">⚡ Limited Time Only</h3>
+                            <p class="urgency-text mb-0">These exclusive benefits are only available to the first 500 members. Once we hit our limit, these offers disappear forever.</p>
+                        </div>
+                    </div>
+
+                    <!-- What We're Building Section -->
+                    <div class="mb-5">
+                        <h2 class="display-6 fw-bold mb-3">What We're Building</h2>
+                        <p class="lead text-muted mb-4">Revolutionary AI technology that will transform how items travel across borders.</p>
+                        
+                        <div class="feature-item">
+                            <div class="feature-icon">🧠</div>
+                            <div class="feature-content">
+                                <h3 class="h5 fw-semibold mb-2">Neural Matching Engine</h3>
+                                <p class="text-muted mb-0">AI analyzes 50+ compatibility factors to find perfect sender-traveler matches with 99% accuracy</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🔮</div>
+                            <div class="feature-content">
+                                <h3 class="h5 fw-semibold mb-2">Predictive Delivery Analytics</h3>
+                                <p class="text-muted mb-0">Machine learning forecasts delivery success rates and optimal timing with precision</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">🛡️</div>
+                            <div class="feature-content">
+                                <h3 class="h5 fw-semibold mb-2">AI Security Shield</h3>
+                                <p class="text-muted mb-0">Advanced behavioral analysis and fraud detection protecting every transaction</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">📍</div>
+                            <div class="feature-content">
+                                <h3 class="h5 fw-semibold mb-2">Real-Time Intelligence</h3>
+                                <p class="text-muted mb-0">GPS tracking with AI-powered delivery predictions and automated updates</p>
+                            </div>
+                        </div>
+                        <div class="feature-item">
+                            <div class="feature-icon">💡</div>
+                            <div class="feature-content">
+                                <h3 class="h5 fw-semibold mb-2">Smart Pricing Engine</h3>
+                                <p class="text-muted mb-0">Dynamic pricing optimization that saves users up to 80% on international shipping</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonials Section -->
+                    <div class="mb-5">
+                        <h2 class="display-6 fw-bold mb-4">What Early Users Say</h2>
+                        <div class="row g-3">
+                            <div class="col-md-12">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"The AI matching is incredible. I found the perfect traveler in minutes, saved 70% on shipping, and my package arrived 5 days faster than expected."</p>
+                                    <div class="testimonial-author">Sarah Chen</div>
+                                    <div class="testimonial-role">Beta User, Toronto</div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"As a frequent traveler, I've earned over $2,000 in my first month helping others send items. The platform is intuitive and completely secure."</p>
+                                    <div class="testimonial-author">James Okafor</div>
+                                    <div class="testimonial-role">Verified Traveler, Lagos</div>
+                                </div>
+                            </div>
+                            <div class="col-md-12">
+                                <div class="testimonial-card">
+                                    <p class="testimonial-text">"Finally, a solution that combines cutting-edge AI with human trust. This is the future of international logistics."</p>
+                                    <div class="testimonial-author">Dr. Michael Rodriguez</div>
+                                    <div class="testimonial-role">Logistics Expert, MIT</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- FAQ Section -->
+                    <div class="mb-5">
+                        <h2 class="display-6 fw-bold mb-4">Frequently Asked Questions</h2>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">When will Bagxtra launch?</button>
+                            <div class="faq-answer">We're targeting Q2 2026 for our full launch. Founding members will get early access 30 days before the public launch.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">How does the AI matching work?</button>
+                            <div class="faq-answer">Our neural network analyzes compatibility factors including routes, timing, item types, user ratings, and travel patterns to find optimal matches with 99% success rate.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">Is my data secure?</button>
+                            <div class="faq-answer">Absolutely. We use end-to-end encryption, biometric verification, and AI-powered fraud detection. Your data is never shared and all transactions are protected by escrow.</div>
+                        </div>
+                        <div class="faq-item">
+                            <button class="faq-question" onclick="toggleFaq(this)">What countries will you support?</button>
+                            <div class="faq-answer">We're launching with major routes between USA, Canada, UK, Nigeria, Ghana, Kenya, and expanding to 50+ countries by end of 2026.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column - Form (Mobile: Shows first) -->
+                <div class="col-lg-4 order-lg-2 order-1">
+                    <div class="form-container" id="signupForm">
+                        <h2 class="form-title">Secure Your Founder Status</h2>
+                        <p class="form-subtitle">Join 2,847 innovators already on the waitlist</p>
+                        
+                        <form id="waitlistForm">
+                            <div class="mb-3">
+                                <label class="form-label" for="firstName">First Name *</label>
+                                <input type="text" id="firstName" name="firstName" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="lastName">Last Name *</label>
+                                <input type="text" id="lastName" name="lastName" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="email">Email Address *</label>
+                                <input type="email" id="email" name="email" class="form-control" required>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone" class="form-control" placeholder="+1 (555) 123-4567">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="country">Country *</label>
+                                <select id="country" name="country" class="form-select" required>
+                                    <option value="">Select your country</option>
+                                    <option value="US">🇺🇸 United States</option>
+                                    <option value="CA">🇨🇦 Canada</option>
+                                    <option value="GB">🇬🇧 United Kingdom</option>
+                                    <option value="NG">🇳🇬 Nigeria</option>
+                                    <option value="GH">🇬🇭 Ghana</option>
+                                    <option value="KE">🇰🇪 Kenya</option>
+                                    <option value="ZA">🇿🇦 South Africa</option>
+                                    <option value="AU">🇦🇺 Australia</option>
+                                    <option value="DE">🇩🇪 Germany</option>
+                                    <option value="FR">🇫🇷 France</option>
+                                    <option value="IN">🇮🇳 India</option>
+                                    <option value="BR">🇧🇷 Brazil</option>
+                                    <option value="other">🌍 Other</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="userType">Primary Interest *</label>
+                                <select id="userType" name="userType" class="form-select" required>
+                                    <option value="">Select your interest</option>
+                                    <option value="sender">📦 Buying Items internationally</option>
+                                    <option value="traveler">✈️ Earning money while traveling</option>
+                                    <option value="both">🔄 Both buying and earning</option>
+                                    <option value="business">🏢 Business/enterprise solutions</option>
+                                </select>
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="routes">Primary Routes (Optional)</label>
+                                <input type="text" id="routes" name="routes" class="form-control" placeholder="e.g., USA ↔ Nigeria, Canada ↔ Ghana">
+                            </div>
+
+                            <div class="mb-3">
+                                <label class="form-label" for="referral">How did you hear about us?</label>
+                                <select id="referral" name="referral" class="form-select">
+                                    <option value="">Select source</option>
+                                    <option value="social-media">📱 Social Media</option>
+                                    <option value="friend">👥 Friend/Family Referral</option>
+                                    <option value="search">🔍 Google Search</option>
+                                    <option value="advertisement">📺 Advertisement</option>
+                                    <option value="blog">📰 Blog/Article</option>
+                                    <option value="event">🎪 Event/Conference</option>
+                                    <option value="other">🤷 Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input type="checkbox" id="updates" name="updates" class="form-check-input" checked>
+                                <label class="form-check-label" for="updates">
+                                    I want to receive exclusive founder updates, beta access notifications, and special offers from Bagxtra.
+                                </label>
+                            </div>
+
+                            <div class="form-check mb-3">
+                                <input type="checkbox" id="terms" name="terms" class="form-check-input" required>
+                                <label class="form-check-label" for="terms">
+                                    I agree to the <a href="#" class="text-primary-custom" onclick="showModal('terms')">Terms of Service</a> and <a href="#" class="text-primary-custom" onclick="showModal('privacy')">Privacy Policy</a> *
+                                </label>
+                            </div>
+
+                            <button type="submit" class="btn submit-button" id="submitBtn">
+                                🚀 Secure My Founder Status
+                            </button>
+                        </form>
+                    </div>
+
+                    <!-- Success State -->
+                    <div class="success-state" id="successState">
+                        <div class="success-icon">🎉</div>
+                        <h2 class="success-title">Welcome to the Revolution!</h2>
+                        <p class="success-text">You're now part of our exclusive founding community. Check your email for your welcome package and founder benefits details.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Form handling
+        document.getElementById('waitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const submitBtn = document.getElementById('submitBtn');
+            const formContainer = document.getElementById('signupForm');
+            const successState = document.getElementById('successState');
+            
+            // Collect form data
+            const formData = new FormData(this);
+            const data = Object.fromEntries(formData);
+            
+            // Validation
+            if (!data.firstName || !data.lastName || !data.email || !data.country || !data.userType) {
+                alert('Please fill in all required fields');
+                return;
+            }
+
+            if (!data.terms) {
+                alert('Please accept the Terms of Service and Privacy Policy');
+                return;
+            }
+
+            // Show loading state
+            submitBtn.disabled = true;
+            submitBtn.innerHTML = '🔄 Securing Your Spot...';
+            
+            // Simulate API call
+            setTimeout(() => {
+                // Hide form and show success
+                formContainer.style.display = 'none';
+                successState.classList.add('active');
+                
+                // Update waitlist counter
+                const counter = document.getElementById('waitlistCount');
+                const currentCount = parseInt(counter.textContent.replace(',', ''));
+                counter.textContent = (currentCount + 1).toLocaleString();
+                
+                // Show success message
+                console.log('New founder signed up:', data);
+                
+                // Track conversion (you would send this to your analytics)
+                if (typeof gtag !== 'undefined') {
+                    gtag('event', 'signup', {
+                        'event_category': 'waitlist',
+                        'event_label': 'founder_signup',
+                        'value': 1
+                    });
+                }
+
+                // Scroll to success message on mobile
+                if (window.innerWidth < 992) {
+                    successState.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                }
+            }, 2000);
+        });
+
+        // FAQ toggle functionality
+        function toggleFaq(element) {
+            const answer = element.nextElementSibling;
+            const isActive = answer.classList.contains('active');
+            
+            // Close all FAQ answers
+            document.querySelectorAll('.faq-answer').forEach(item => {
+                item.classList.remove('active');
+            });
+            
+            // Toggle current answer
+            if (!isActive) {
+                answer.classList.add('active');
+            }
+        }
+
+        // Modal functionality for terms and privacy
+        function showModal(type) {
+            let content = '';
+            let title = '';
+            
+            if (type === 'terms') {
+                title = 'Terms of Service';
+                content = `
+                    <strong>Terms of Service</strong><br><br>
+                    1. Bagxtra is a peer-to-peer logistics platform<br>
+                    2. Users must be 18+ years old<br>
+                    3. All items must be legal and properly declared<br>
+                    4. Platform fees apply to completed deliveries<br>
+                    5. Users are responsible for item insurance<br>
+                    6. Disputes handled through our resolution system<br><br>
+                    Full terms will be available at launch.
+                `;
+            } else if (type === 'privacy') {
+                title = 'Privacy Policy';
+                content = `
+                    <strong>Privacy Policy Summary</strong><br><br>
+                    • We collect only necessary information for our service<br>
+                    • Your data is encrypted and never sold to third parties<br>
+                    • We use data to improve AI matching and security<br>
+                    • You can delete your account and data anytime<br>
+                    • We comply with GDPR, CCPA, and international privacy laws<br>
+                    • Cookies used for essential functionality only<br><br>
+                    Full privacy policy will be available at launch.
+                `;
+            }
+
+            // Create modal using Bootstrap
+            const modalHtml = `
+                <div class="modal fade" id="infoModal" tabindex="-1" aria-labelledby="infoModalLabel" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="infoModalLabel">${title}</h5>
+                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                            </div>
+                            <div class="modal-body">
+                                ${content}
+                            </div>
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-primary" data-bs-dismiss="modal">Got it</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+
+            // Remove existing modal if any
+            const existingModal = document.getElementById('infoModal');
+            if (existingModal) {
+                existingModal.remove();
+            }
+
+            // Add modal to body
+            document.body.insertAdjacentHTML('beforeend', modalHtml);
+
+            // Show modal
+            const modal = new bootstrap.Modal(document.getElementById('infoModal'));
+            modal.show();
+
+            // Remove modal from DOM after it's hidden
+            document.getElementById('infoModal').addEventListener('hidden.bs.modal', function() {
+                this.remove();
+            });
+        }
+
+        // Dynamic stats counter (simulated real-time updates)
+        let currentWaitlistCount = 2847;
+        setInterval(() => {
+            if (Math.random() < 0.2) { // 20% chance every 30 seconds
+                currentWaitlistCount += Math.floor(Math.random() * 3) + 1;
+                document.getElementById('waitlistCount').textContent = currentWaitlistCount.toLocaleString();
+            }
+        }, 30000);
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.benefit-card, .feature-item, .testimonial-card, .faq-item').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form validation helpers
+        const emailInput = document.getElementById('email');
+        emailInput.addEventListener('blur', function() {
+            const email = this.value;
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            
+            if (email && !emailRegex.test(email)) {
+                this.classList.add('is-invalid');
+            } else {
+                this.classList.remove('is-invalid');
+            }
+        });
+
+        // Phone number formatting
+        const phoneInput = document.getElementById('phone');
+        phoneInput.addEventListener('input', function() {
+            let value = this.value.replace(/\D/g, '');
+            if (value.length > 0) {
+                if (value.length <= 10) {
+                    value = value.replace(/(\d{3})(\d{3})(\d{4})/, '($1) $2-$3');
+                } else {
+                    value = value.replace(/(\d{1})(\d{3})(\d{3})(\d{4})/, '+$1 ($2) $3-$4');
+                }
+            }
+            this.value = value;
+        });
+
+        // Urgency timer (countdown to next price increase)
+        let urgencyHours = 47;
+        let urgencyMinutes = 23;
+
+        function updateUrgencyTimer() {
+            urgencyMinutes--;
+            if (urgencyMinutes < 0) {
+                urgencyMinutes = 59;
+                urgencyHours--;
+            }
+            
+            if (urgencyHours >= 0) {
+                const urgencyText = document.querySelector('.urgency-text');
+                if (urgencyText) {
+                    urgencyText.innerHTML = `These exclusive benefits are only available to the first 500 members. Time remaining: ${urgencyHours}h ${urgencyMinutes}m`;
+                }
+            }
+        }
+
+        // Update timer every minute
+        setInterval(updateUrgencyTimer, 60000);
+        updateUrgencyTimer(); // Initial call
+
+        // Track user engagement
+        let engagementScore = 0;
+        let startTime = Date.now();
+
+        // Track scroll depth
+        window.addEventListener('scroll', function() {
+            const scrollPercent = Math.round((window.scrollY / (document.body.scrollHeight - window.innerHeight)) * 100);
+            if (scrollPercent > engagementScore) {
+                engagementScore = scrollPercent;
+            }
+        });
+
+        // Track time on page and engagement before user leaves
+        window.addEventListener('beforeunload', function() {
+            const timeSpent = Math.round((Date.now() - startTime) / 1000);
+            console.log('User engagement:', {
+                timeSpent: timeSpent + 's',
+                scrollDepth: engagementScore + '%',
+                formInteraction: document.querySelector('#waitlistForm input:focus') ? 'Yes' : 'No'
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Auto-focus first form field when form comes into view (desktop only)
+        if (window.innerWidth >= 992) {
+            const formObserver = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        setTimeout(() => {
+                            document.getElementById('firstName').focus();
+                        }, 500);
+                    }
+                });
+            }, { threshold: 0.5 });
+
+            formObserver.observe(document.querySelector('.form-container'));
+        }
+
+        // Mobile-specific optimizations
+        if (window.innerWidth < 768) {
+            // Disable hover effects on mobile to improve performance
+            document.body.classList.add('mobile-device');
+            
+            // Add mobile-specific CSS
+            const mobileStyles = `
+                <style>
+                    .mobile-device .benefit-card:hover,
+                    .mobile-device .feature-item:hover,
+                    .mobile-device .testimonial-card:hover {
+                        transform: none !important;
+                        box-shadow: none !important;
+                    }
+                    
+                    .mobile-device .submit-button:hover {
+                        transform: none !important;
+                        box-shadow: none !important;
+                    }
+                </style>
+            `;
+            document.head.insertAdjacentHTML('beforeend', mobileStyles);
+        }
+
+        // Touch-friendly FAQ for mobile
+        if ('ontouchstart' in window) {
+            document.querySelectorAll('.faq-question').forEach(question => {
+                question.addEventListener('touchend', function(e) {
+                    e.preventDefault();
+                    toggleFaq(this);
+                });
+            });
+        }
+
+        // Progressive enhancement for older browsers
+        if (!window.IntersectionObserver) {
+            // Fallback for older browsers - just show all animations immediately
+            document.querySelectorAll('.benefit-card, .feature-item, .testimonial-card, .faq-item').forEach(el => {
+                el.classList.add('animate-in');
+            });
+        }
+
+        // Performance monitoring
+        window.addEventListener('load', function() {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            console.log('Page loaded in:', loadTime + 'ms');
+            
+            // Report slow loading times (in a real app, you'd send this to analytics)
+            if (loadTime > 3000) {
+                console.warn('Slow page load detected:', loadTime + 'ms');
+            }
+        });
+
+        // Viewport height fix for mobile browsers
+        function setViewportHeight() {
+            let vh = window.innerHeight * 0.01;
+            document.documentElement.style.setProperty('--vh', `${vh}px`);
+        }
+
+        setViewportHeight();
+        window.addEventListener('resize', setViewportHeight);
+
+        // Prevent zoom on input focus (iOS Safari)
+        if (/iPad|iPhone|iPod/.test(navigator.userAgent)) {
+            const inputs = document.querySelectorAll('input[type="text"], input[type="email"], input[type="tel"], select');
+            inputs.forEach(input => {
+                if (input.style.fontSize < '16px') {
+                    input.style.fontSize = '16px';
+                }
+            });
+        }
+
+        // Enhanced mobile form experience
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add loading states to form inputs
+            const formInputs = document.querySelectorAll('.form-control, .form-select');
+            formInputs.forEach(input => {
+                input.addEventListener('focus', function() {
+                    this.parentElement.classList.add('focused');
+                });
+                
+                input.addEventListener('blur', function() {
+                    if (!this.value) {
+                        this.parentElement.classList.remove('focused');
+                    }
+                });
+            });
+
+            // Enhance mobile navigation
+            const navbar = document.querySelector('.navbar');
+            let lastScrollTop = 0;
+            
+            if (window.innerWidth < 768) {
+                window.addEventListener('scroll', function() {
+                    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+                    
+                    if (scrollTop > lastScrollTop && scrollTop > 100) {
+                        // Scrolling down
+                        navbar.style.transform = 'translateY(-100%)';
+                    } else {
+                        // Scrolling up
+                        navbar.style.transform = 'translateY(0)';
+                    }
+                    
+                    lastScrollTop = scrollTop;
+                }, { passive: true });
+            }
+        });
+    </script>
+</body>
+</html>
