@@ -3,63 +3,27 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Bagxtra - AI-powered peer-to-peer logistics platform for international shipping. Save up to 80% with intelligent traveler matching.">
-    <meta name="keywords" content="international shipping, peer-to-peer logistics, AI matching, cross-border delivery">
-    <meta name="author" content="Bagxtra">
-    <meta name="robots" content="index, follow">
-    
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Bagxtra - AI-Powered Cross-Border Logistics">
-    <meta property="og:description" content="Connect with verified travelers through our AI platform. Save up to 80% on international shipping.">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://bagxtra.com">
-    <meta property="og:image" content="https://bagxtra.com/og-image.jpg">
-    
-    <!-- Twitter Card Meta Tags -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Bagxtra - AI-Powered Cross-Border Logistics">
-    <meta name="twitter:description" content="Connect with verified travelers through our AI platform. Save up to 80% on international shipping.">
-    <meta name="twitter:image" content="https://bagxtra.com/twitter-image.jpg">
-    
-    <!-- Favicon -->
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
-    
-    <title>Bagxtra - AI-Powered Cross-Border peer-to-peer Logistics</title>
+    <title>Bagxtra - AI-Powered Cross-Border Logistics</title>
     
     <!-- Bootstrap CSS -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
     <!-- Bootstrap Icons -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
     <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <!-- AOS Animation Library -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     
     <style>
         :root {
-            --primary: #300942;
-            --primary-dark: #1f0630;
-            --primary-light: #4A1558;
-            --secondary: #8B5CF6;
-            --accent: #F59E0B;
+            --primary: #390240;
+            --secondary: #58012d;
+            --accent: #58042f;
             --text-dark: #1F2937;
             --text-gray: #6B7280;
-            --text-light: #9CA3AF;
             --bg-white: #FFFFFF;
-            --bg-gray: #F9FAFB;
-            --bg-dark: #111827;
-            --border: #E5E7EB;
-            --border-light: #F3F4F6;
-            --success: #10B981;
-            --warning: #F59E0B;
-            --danger: #EF4444;
-            --gradient-primary: linear-gradient(135deg, #300942 0%, #4A1558 50%, #8B5CF6 100%);
-            --gradient-secondary: linear-gradient(135deg, #8B5CF6 0%, #EC4899 100%);
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            --bg-light: #F9FAFB;
+            --gradient-primary: linear-gradient(135deg, #2e013e 0%, #70043a 100%);
+            --gradient-soft: linear-gradient(135deg, rgba(57, 2, 64, 0.05) 0%, rgba(88, 1, 45, 0.05) 100%);
+            --gradient-vibrant: linear-gradient(135deg, #390240 0%, #58012d 50%, #70043a 100%);
         }
 
         * {
@@ -69,845 +33,832 @@
         }
 
         body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            line-height: 1.7;
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
             color: var(--text-dark);
-            font-weight: 400;
             overflow-x: hidden;
-            background: var(--bg-white);
         }
 
-        /* Scrollbar Styling */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        ::-webkit-scrollbar-track {
-            background: var(--bg-gray);
-        }
-
-        ::-webkit-scrollbar-thumb {
-            background: var(--primary);
-            border-radius: 4px;
-        }
-
-        ::-webkit-scrollbar-thumb:hover {
-            background: var(--primary-dark);
-        }
-
-        /* Typography */
-        h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
-            line-height: 1.3;
-            letter-spacing: -0.025em;
-            color: var(--text-dark);
-        }
-
-        .display-1 { font-size: clamp(3rem, 8vw, 5rem); }
-        .display-2 { font-size: clamp(2.5rem, 6vw, 4rem); }
-        .display-3 { font-size: clamp(2rem, 5vw, 3.5rem); }
-
-        .text-gradient {
-            background: var(--gradient-primary);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        /* Custom Bootstrap overrides */
-        .btn {
-            font-weight: 600;
-            letter-spacing: 0.025em;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 12px;
-            padding: 0.875rem 2rem;
-        }
-
-        .btn-primary {
-            background: var(--gradient-primary);
-            border: none;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .btn-primary::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s;
-        }
-
-        .btn-primary:hover::before {
-            left: 100%;
-        }
-
-        .btn-primary:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-            filter: brightness(1.1);
-        }
-
-        .btn-outline-primary {
-            border: 2px solid var(--primary);
-            color: var(--primary);
-            background: transparent;
-        }
-
-        .btn-outline-primary:hover {
-            background: var(--primary);
-            border-color: var(--primary);
-            transform: translateY(-2px);
-        }
-
-        /* Navigation */
+        /* Navigation - Mobile First */
         .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-light);
-            padding: 1.25rem 0;
-            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        }
-
-        .navbar.scrolled {
             background: rgba(255, 255, 255, 0.98) !important;
-            box-shadow: var(--shadow-md);
-            padding: 1rem 0;
-        }
-
-        .navbar-brand {
-            font-size: 1.75rem;
-            font-weight: 800;
-            color: var(--text-dark) !important;
-            letter-spacing: -0.025em;
-        }
-
-        .navbar-nav .nav-link {
-            color: var(--text-gray) !important;
-            font-weight: 500;
-            margin: 0 0.75rem;
-            padding: 0.5rem 0 !important;
-            position: relative;
+            backdrop-filter: blur(20px);
+            padding: 0.75rem 0;
+            box-shadow: 0 2px 20px rgba(57, 2, 64, 0.08);
             transition: all 0.3s ease;
         }
 
-        .navbar-nav .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--gradient-primary);
-            transition: width 0.3s ease;
+        .navbar.scrolled {
+            padding: 0.5rem 0;
+            box-shadow: 0 4px 30px rgba(57, 2, 64, 0.15);
         }
 
-        .navbar-nav .nav-link:hover::after {
-            width: 100%;
-        }
-
-        .navbar-nav .nav-link:hover {
-            color: var(--text-dark) !important;
+        .navbar-brand {
+            font-size: 1.5rem;
+            font-weight: 900;
+            background: var(--gradient-vibrant);
+            background-clip: text;
+            -webkit-background-clip: text;
+            color: transparent;
+            -webkit-text-fill-color: transparent;
+            transition: transform 0.3s ease;
         }
 
         .navbar-toggler {
             border: none;
             padding: 0.5rem;
-            font-size: 1.25rem;
+            box-shadow: none !important;
         }
 
-        .navbar-toggler:focus {
-            box-shadow: none;
+        .navbar-toggler-icon {
+            width: 28px;
+            height: 2px;
+            background: var(--primary);
+            display: block;
+            position: relative;
+            transition: all 0.3s ease;
         }
 
-        /* Hero Section */
-        .hero {
-            padding: 10rem 0 8rem;
-            background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+        .navbar-toggler-icon::before,
+        .navbar-toggler-icon::after {
+            content: '';
+            width: 28px;
+            height: 2px;
+            background: var(--primary);
+            position: absolute;
+            left: 0;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-toggler-icon::before { top: -8px; }
+        .navbar-toggler-icon::after { bottom: -8px; }
+
+        .navbar-collapse {
+            background: white;
+            padding: 1rem;
+            border-radius: 16px;
+            margin-top: 1rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        @media (min-width: 992px) {
+            .navbar-collapse {
+                background: transparent;
+                padding: 0;
+                margin-top: 0;
+                box-shadow: none;
+            }
+        }
+
+        .nav-link {
+            color: var(--text-gray) !important;
+            font-weight: 600;
+            transition: all 0.3s;
+            padding: 0.75rem 1rem !important;
+            position: relative;
+        }
+
+        @media (min-width: 992px) {
+            .nav-link::after {
+                content: '';
+                position: absolute;
+                bottom: 0;
+                left: 50%;
+                transform: translateX(-50%);
+                width: 0;
+                height: 2px;
+                background: var(--gradient-primary);
+                transition: width 0.3s ease;
+            }
+
+            .nav-link:hover::after {
+                width: 60%;
+            }
+        }
+
+        .nav-link:hover {
+            color: var(--primary) !important;
+        }
+
+        .btn-gradient {
+            background: var(--gradient-vibrant);
+            color: white;
+            border: none;
+            padding: 0.75rem 2rem;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(57, 2, 64, 0.3);
             position: relative;
             overflow: hidden;
+            width: 100%;
+        }
+
+        @media (min-width: 992px) {
+            .btn-gradient {
+                width: auto;
+            }
+        }
+
+        .btn-gradient::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s ease;
+        }
+
+        .btn-gradient:hover::before {
+            left: 100%;
+        }
+
+        .btn-gradient:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
+            color: white;
+        }
+
+        /* Hero Section - Mobile First */
+        .hero {
+            padding: 6rem 0 4rem;
+            background: var(--gradient-soft);
+            position: relative;
+            overflow: hidden;
+            margin-top: 60px;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding: 8rem 0 6rem;
+                margin-top: 76px;
+            }
         }
 
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(48, 9, 66, 0.05) 0%, transparent 70%);
+            width: 300px;
+            height: 300px;
+            background: radial-gradient(circle, rgba(57, 2, 64, 0.15), transparent);
+            top: -20%;
+            right: -10%;
+            border-radius: 50%;
             animation: float 20s ease-in-out infinite;
+        }
+
+        @media (min-width: 768px) {
+            .hero::before {
+                width: 600px;
+                height: 600px;
+            }
         }
 
         .hero::after {
             content: '';
             position: absolute;
-            bottom: -50%;
-            left: -20%;
-            width: 60%;
-            height: 200%;
-            background: radial-gradient(ellipse, rgba(139, 92, 246, 0.05) 0%, transparent 70%);
-            animation: float 25s ease-in-out infinite reverse;
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle, rgba(88, 1, 45, 0.1), transparent);
+            bottom: -10%;
+            left: -5%;
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite reverse;
+        }
+
+        @media (min-width: 768px) {
+            .hero::after {
+                width: 400px;
+                height: 400px;
+            }
         }
 
         @keyframes float {
-            0%, 100% { transform: translateY(0px) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
+            0%, 100% { transform: translate(0, 0) scale(1); }
+            50% { transform: translate(30px, -30px) scale(1.1); }
         }
 
         .hero-badge {
-            background: rgba(48, 9, 66, 0.1);
+            background: rgba(57, 2, 64, 0.1);
             color: var(--primary);
-            padding: 0.75rem 1.5rem;
+            padding: 0.6rem 1.25rem;
             border-radius: 50px;
-            font-size: 0.875rem;
-            font-weight: 600;
-            border: 1px solid rgba(48, 9, 66, 0.2);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            margin-bottom: 2rem;
-            animation: pulse 2s infinite;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: inline-block;
+            margin-bottom: 1.5rem;
+            border: 2px solid rgba(57, 2, 64, 0.2);
+            animation: pulse 3s ease-in-out infinite;
+        }
+
+        @media (min-width: 768px) {
+            .hero-badge {
+                padding: 0.75rem 1.5rem;
+                font-size: 0.875rem;
+            }
         }
 
         @keyframes pulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.05); }
+            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(57, 2, 64, 0.3); }
+            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(57, 2, 64, 0); }
         }
 
         .hero h1 {
-            font-size: clamp(3rem, 6vw, 4.5rem);
-            font-weight: 800;
-            margin-bottom: 2rem;
-            letter-spacing: -0.04em;
-            line-height: 1.1;
-        }
-
-        .hero-subtitle {
-            font-size: clamp(1.25rem, 3vw, 1.5rem);
-            color: var(--text-gray);
-            margin-bottom: 3rem;
-            line-height: 1.6;
-            font-weight: 400;
-        }
-
-        .hero-cta {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 1.25rem 2.5rem;
-            border-radius: 16px;
-            text-decoration: none;
-            font-weight: 600;
-            font-size: 1.125rem;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.75rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border: none;
-            position: relative;
-            overflow: hidden;
-            box-shadow: var(--shadow-lg);
-        }
-
-        .hero-cta::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .hero-cta:hover::before {
-            left: 100%;
-        }
-
-        .hero-cta:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-xl);
-            color: white;
-        }
-
-        .hero-cta i {
-            transition: transform 0.3s ease;
-        }
-
-        .hero-cta:hover i {
-            transform: translateX(4px);
-        }
-
-        /* Stats Section */
-        .stats-section {
-            background: var(--primary);
-            color: white;
-            padding: 4rem 0;
-            margin-top: -2rem;
+            font-size: 2rem;
+            font-weight: 900;
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #1F2937 0%, #390240 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
             position: relative;
             z-index: 1;
         }
 
-        .stat-item {
-            text-align: center;
-            padding: 1rem;
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3rem;
+            }
         }
 
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 800;
-            line-height: 1;
-            margin-bottom: 0.5rem;
-            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
+        @media (min-width: 1200px) {
+            .hero h1 {
+                font-size: 3.75rem;
+            }
         }
 
-        .stat-label {
+        .hero-subtitle {
             font-size: 1rem;
-            font-weight: 500;
-            opacity: 0.9;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        /* Section Styling */
-        .section {
-            padding: 6rem 0;
-            position: relative;
-        }
-
-        .section-dark {
-            background: linear-gradient(135deg, var(--bg-dark) 0%, #1f1f23 100%);
-            color: white;
-        }
-
-        .section-gray {
-            background: var(--bg-gray);
-        }
-
-        .section-header {
-            text-align: center;
-            margin-bottom: 4rem;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-
-        .section-title {
-            font-size: clamp(2.5rem, 5vw, 3.5rem);
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            letter-spacing: -0.02em;
-            position: relative;
-        }
-
-        .section-subtitle {
-            font-size: clamp(1.125rem, 2.5vw, 1.375rem);
             color: var(--text-gray);
             margin-bottom: 2rem;
             line-height: 1.7;
-            font-weight: 400;
+            position: relative;
+            z-index: 1;
         }
 
-        .section-dark .section-title {
-            color: white;
+        @media (min-width: 768px) {
+            .hero-subtitle {
+                font-size: 1.125rem;
+                margin-bottom: 2.5rem;
+            }
         }
 
-        .section-dark .section-subtitle {
-            color: rgba(255, 255, 255, 0.8);
+        @media (min-width: 1200px) {
+            .hero-subtitle {
+                font-size: 1.25rem;
+            }
         }
 
-        /* Feature Cards */
-        .feature-card {
+        /* Section Styling - Mobile First */
+        .section {
+            padding: 3rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 4rem 0;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .section {
+                padding: 5rem 0;
+            }
+        }
+
+        .section-title {
+            font-size: 1.75rem;
+            font-weight: 900;
+            margin-bottom: 1rem;
+            text-align: center;
+            background: linear-gradient(135deg, #390240 0%, #58012d 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        @media (min-width: 768px) {
+            .section-title {
+                font-size: 2.25rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .section-title {
+                font-size: 2.75rem;
+            }
+        }
+
+        .section-subtitle {
+            color: var(--text-gray);
+            text-align: center;
+            margin-bottom: 2rem;
+            font-size: 1rem;
+            font-weight: 500;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .section-subtitle {
+                font-size: 1.0625rem;
+                margin-bottom: 2.5rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .section-subtitle {
+                font-size: 1.125rem;
+                margin-bottom: 3rem;
+            }
+        }
+
+        /* Cards - Mobile First */
+        .feature-card, .benefit-card {
             background: white;
-            padding: 2.5rem;
-            border-radius: 20px;
-            border: 1px solid var(--border-light);
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            border: 2px solid rgba(57, 2, 64, 0.08);
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             height: 100%;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
             position: relative;
             overflow: hidden;
-            box-shadow: var(--shadow-sm);
+            margin-bottom: 1.5rem;
         }
 
-        .feature-card::before {
+        @media (min-width: 768px) {
+            .feature-card, .benefit-card {
+                padding: 2.5rem 2rem;
+                margin-bottom: 0;
+            }
+        }
+
+        .feature-card::before, .benefit-card::before {
             content: '';
             position: absolute;
             top: 0;
             left: 0;
-            right: 0;
-            height: 5px;
-            background: var(--gradient-primary);
-            transform: scaleX(0);
-            transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            border-radius: 20px 20px 0 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gradient-soft);
+            opacity: 0;
+            transition: opacity 0.4s ease;
         }
 
-        .feature-card:hover {
+        .feature-card:hover::before, .benefit-card:hover::before {
+            opacity: 1;
+        }
+
+        .feature-card:hover, .benefit-card:hover {
             transform: translateY(-8px);
-            box-shadow: var(--shadow-xl);
-            border-color: rgba(48, 9, 66, 0.1);
+            box-shadow: 0 20px 50px rgba(57, 2, 64, 0.25);
+            border-color: rgba(57, 2, 64, 0.3);
         }
 
-        .feature-card:hover::before {
-            transform: scaleX(1);
+        .feature-card > *, .benefit-card > * {
+            position: relative;
+            z-index: 1;
         }
 
         .feature-icon {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
-            border-radius: 20px;
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-vibrant);
+            border-radius: 18px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
+            font-size: 1.5rem;
             color: white;
-            position: relative;
-            box-shadow: var(--shadow-md);
+            margin-bottom: 1.5rem;
+            transition: all 0.4s ease;
+            box-shadow: 0 8px 20px rgba(57, 2, 64, 0.3);
         }
 
-        .feature-icon::after {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: var(--gradient-primary);
-            border-radius: 22px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+        @media (min-width: 768px) {
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                font-size: 1.75rem;
+            }
         }
 
-        .feature-card:hover .feature-icon::after {
-            opacity: 0.2;
+        .feature-card:hover .feature-icon {
+            transform: scale(1.1) rotate(5deg);
+            box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
         }
 
         .feature-title {
-            font-size: 1.5rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
             margin-bottom: 1rem;
             color: var(--text-dark);
+        }
+
+        @media (min-width: 768px) {
+            .feature-title {
+                font-size: 1.35rem;
+            }
         }
 
         .feature-description {
             color: var(--text-gray);
             line-height: 1.7;
-            margin-bottom: 0;
-            font-size: 1rem;
+            font-size: 0.95rem;
         }
 
-        /* Step Cards */
-        .steps-container {
-            position: relative;
+        @media (min-width: 768px) {
+            .feature-description {
+                font-size: 1rem;
+            }
         }
 
+        /* Steps - Mobile First */
         .step-card {
             text-align: center;
-            padding: 2rem 1rem;
-            position: relative;
-            background: white;
-            border-radius: 16px;
-            margin-bottom: 2rem;
+            padding: 2rem 1.5rem;
             transition: all 0.3s ease;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .step-card {
+                padding: 2.5rem 2rem;
+                margin-bottom: 0;
+            }
         }
 
         .step-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            transform: scale(1.05);
         }
 
         .step-number {
-            width: 80px;
-            height: 80px;
-            background: var(--gradient-primary);
+            width: 60px;
+            height: 60px;
+            background: var(--gradient-vibrant);
             color: white;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin: 0 auto 2rem;
+            margin: 0 auto 1.5rem;
             font-size: 1.5rem;
-            font-weight: 700;
-            position: relative;
-            z-index: 2;
-            box-shadow: var(--shadow-lg);
+            font-weight: 900;
+            box-shadow: 0 8px 25px rgba(57, 2, 64, 0.4);
+            transition: all 0.4s ease;
         }
 
-        .step-connector {
-            position: absolute;
-            top: 40px;
-            right: -50%;
-            width: 100%;
-            height: 4px;
-            background: linear-gradient(to right, var(--primary), var(--secondary));
-            z-index: 1;
-            opacity: 0.3;
+        @media (min-width: 768px) {
+            .step-number {
+                width: 70px;
+                height: 70px;
+                font-size: 1.75rem;
+            }
         }
 
-        .step-card:last-child .step-connector {
-            display: none;
+        .step-card:hover .step-number {
+            transform: scale(1.15);
+            box-shadow: 0 12px 35px rgba(57, 2, 64, 0.6);
         }
 
         .step-title {
-            font-size: 1.375rem;
-            font-weight: 700;
+            font-size: 1.2rem;
+            font-weight: 800;
             margin-bottom: 1rem;
             color: var(--text-dark);
         }
 
-        .step-description {
-            color: var(--text-gray);
-            font-size: 1rem;
-            line-height: 1.7;
+        @media (min-width: 768px) {
+            .step-title {
+                font-size: 1.35rem;
+            }
         }
 
-        /* Benefit Cards */
-        .benefit-card {
-            background: white;
-            padding: 2.5rem;
-            border: 2px solid var(--border-light);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            position: relative;
-            overflow: hidden;
+        /* Vendor Section - Mobile First */
+        .vendor-bg {
+            background: var(--gradient-soft);
+            border-radius: 24px;
+            padding: 2rem 1.5rem;
+            border: 2px solid rgba(57, 2, 64, 0.1);
         }
 
-        .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(48, 9, 66, 0.05) 0%, transparent 70%);
-            opacity: 0;
-            transition: opacity 0.4s ease;
+        @media (min-width: 768px) {
+            .vendor-bg {
+                padding: 3rem 2.5rem;
+            }
         }
 
-        .benefit-card:hover {
-            border-color: var(--primary);
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: var(--shadow-xl);
+        @media (min-width: 1200px) {
+            .vendor-bg {
+                padding: 3.5rem 3rem;
+            }
         }
 
-        .benefit-card:hover::before {
-            opacity: 1;
-        }
-
-        .benefit-title {
-            font-size: 1.25rem;
-            font-weight: 700;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .benefit-title::before {
-            content: '✦';
-            color: var(--primary);
-            font-size: 1.5rem;
-        }
-
-        .benefit-description {
-            color: var(--text-gray);
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 0;
-        }
-
-        /* AI Feature Cards */
-        .ai-feature-card {
-            background: rgba(255, 255, 255, 0.08);
-            padding: 2.5rem;
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .ai-feature-card::before {
-            content: '';
-            position: absolute;
-            top: -2px;
-            left: -2px;
-            right: -2px;
-            bottom: -2px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.2), transparent, rgba(139,92,246,0.2));
-            border-radius: 22px;
-            z-index: -1;
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .ai-feature-card:hover {
-            transform: translateY(-8px);
-            background: rgba(255, 255, 255, 0.12);
-        }
-
-        .ai-feature-card:hover::before {
-            opacity: 1;
-        }
-
-        .ai-icon {
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 2rem;
-            font-size: 2rem;
-            color: white;
-            border: 1px solid rgba(255, 255, 255, 0.2);
-            backdrop-filter: blur(10px);
-        }
-
-        .ai-feature-card .feature-title {
-            color: white;
-            font-size: 1.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .ai-feature-card .feature-description {
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 1rem;
-            line-height: 1.7;
-        }
-
-        /* Testimonials */
+        /* Testimonials - Mobile First */
         .testimonial-card {
             background: white;
-            padding: 3rem;
-            border-radius: 20px;
-            border: 1px solid var(--border-light);
-            text-align: center;
-            transition: all 0.3s ease;
+            padding: 2rem 1.5rem;
+            border-radius: 24px;
+            border: 2px solid rgba(57, 2, 64, 0.08);
             height: 100%;
-            box-shadow: var(--shadow-sm);
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            margin-bottom: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-card {
+                padding: 2.5rem 2rem;
+                margin-bottom: 0;
+            }
+        }
+
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -20px;
+            left: 20px;
+            font-size: 80px;
+            color: rgba(57, 2, 64, 0.05);
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-card::before {
+                font-size: 120px;
+            }
         }
 
         .testimonial-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: 0 20px 50px rgba(57, 2, 64, 0.25);
+            border-color: rgba(57, 2, 64, 0.3);
         }
 
         .testimonial-text {
-            font-size: 1.125rem;
-            line-height: 1.8;
-            margin-bottom: 2rem;
-            color: var(--text-gray);
             font-style: italic;
+            color: var(--text-gray);
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            position: relative;
+            z-index: 1;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-text {
+                font-size: 1rem;
+            }
         }
 
         .testimonial-author {
-            font-weight: 600;
+            font-weight: 800;
             color: var(--text-dark);
-            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+        }
+
+        @media (min-width: 768px) {
+            .testimonial-author {
+                font-size: 1.1rem;
+            }
         }
 
         .testimonial-role {
-            color: var(--text-light);
-            font-size: 0.875rem;
-        }
-
-        /* Waitlist Form */
-        .waitlist-form {
-            max-width: 600px;
-            margin: 0 auto 4rem;
-        }
-
-        .form-group {
-            position: relative;
-        }
-
-        .email-input {
-            border: 2px solid var(--border);
-            border-radius: 16px;
-            font-size: 1.125rem;
-            padding: 1.25rem 1.5rem;
-            background: white;
-            transition: all 0.3s ease;
-            width: 100%;
-        }
-
-        .email-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(48, 9, 66, 0.1);
-            outline: none;
-        }
-
-        .email-input.is-invalid {
-            border-color: var(--danger);
-        }
-
-        .submit-button {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 1.25rem 2.5rem;
-            border: none;
-            border-radius: 16px;
-            font-weight: 600;
-            font-size: 1.125rem;
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            position: relative;
-            overflow: hidden;
-            min-width: 200px;
-        }
-
-        .submit-button::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.6s;
-        }
-
-        .submit-button:hover::before {
-            left: 100%;
-        }
-
-        .submit-button:hover {
-            transform: translateY(-3px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .submit-button:disabled {
-            opacity: 0.7;
-            cursor: not-allowed;
-            transform: none;
-        }
-
-        /* Founding Benefits */
-        .founding-benefits {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .benefit-item {
-            text-align: center;
-            padding: 2rem 1rem;
-            background: white;
-            border-radius: 16px;
-            border: 1px solid var(--border-light);
-            transition: all 0.3s ease;
-            height: 100%;
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-md);
-        }
-
-        .benefit-icon {
-            font-size: 3rem;
-            margin-bottom: 1rem;
-            display: block;
-            filter: drop-shadow(0 4px 8px rgba(0,0,0,0.1));
-        }
-
-        .benefit-text {
-            font-size: 1rem;
-            color: var(--text-dark);
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-        }
-
-        .benefit-subtext {
-            font-size: 0.875rem;
+            font-size: 0.85rem;
             color: var(--text-gray);
+            font-weight: 500;
         }
 
-        /* FAQ Section */
+        @media (min-width: 768px) {
+            .testimonial-role {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* FAQ - Mobile First */
         .faq-item {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .faq-question {
             background: white;
-            border: 2px solid var(--border-light);
-            border-radius: 12px;
-            padding: 1.5rem;
+            border: 2px solid rgba(57, 2, 64, 0.1);
+            border-radius: 16px;
+            padding: 1.25rem;
             cursor: pointer;
             transition: all 0.3s ease;
-            font-weight: 600;
+            font-weight: 700;
             display: flex;
             justify-content: space-between;
             align-items: center;
+            font-size: 0.95rem;
+        }
+
+        @media (min-width: 768px) {
+            .faq-question {
+                padding: 1.5rem;
+                font-size: 1rem;
+            }
         }
 
         .faq-question:hover {
             border-color: var(--primary);
-            background: rgba(48, 9, 66, 0.02);
+            background: var(--gradient-soft);
+            box-shadow: 0 6px 20px rgba(57, 2, 64, 0.15);
+            transform: translateX(5px);
+        }
+
+        .faq-question i {
+            transition: transform 0.3s ease;
+            color: var(--primary);
+            font-size: 1.25rem;
+            flex-shrink: 0;
+            margin-left: 1rem;
         }
 
         .faq-answer {
-            padding: 1.5rem;
+            padding: 1.25rem;
             color: var(--text-gray);
-            line-height: 1.7;
             display: none;
+            font-size: 0.9rem;
+            line-height: 1.7;
+        }
+
+        @media (min-width: 768px) {
+            .faq-answer {
+                padding: 1.5rem;
+                font-size: 0.95rem;
+            }
         }
 
         .faq-answer.active {
             display: block;
+            animation: slideDown 0.3s ease;
         }
 
-        /* Footer */
-        .footer {
-            background: linear-gradient(135deg, var(--text-dark) 0%, #000 100%);
+        @keyframes slideDown {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* Waitlist Form - Mobile First */
+        .waitlist-form {
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .email-input {
+            border: 2px solid rgba(57, 2, 64, 0.2);
+            border-radius: 50px;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            font-weight: 500;
+            width: 100%;
+        }
+
+        @media (min-width: 768px) {
+            .email-input {
+                padding: 1.125rem 1.625rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .email-input {
+                padding: 1.25rem 1.75rem;
+            }
+        }
+
+        .email-input:focus {
+            border-color: var(--primary);
+            box-shadow: 0 0 0 4px rgba(57, 2, 64, 0.1);
+            outline: none;
+        }
+
+        .submit-button {
+            background: var(--gradient-vibrant);
             color: white;
-            padding: 4rem 0 2rem;
-            position: relative;
-            overflow: hidden;
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-weight: 700;
+            transition: all 0.4s ease;
+            box-shadow: 0 6px 20px rgba(57, 2, 64, 0.4);
+            font-size: 1rem;
+            width: 100%;
         }
 
-        .footer::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 1px;
-            background: var(--gradient-primary);
+        @media (min-width: 768px) {
+            .submit-button {
+                padding: 1.125rem 2.25rem;
+            }
         }
 
-        .footer-logo {
-            font-size: 2rem;
-            font-weight: 800;
+        @media (min-width: 1200px) {
+            .submit-button {
+                padding: 1.25rem 2.5rem;
+            }
+        }
+
+        .submit-button:hover {
+            transform: translateY(-3px);
             color: white;
+            box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
+        }
+
+        /* Benefits Grid - Mobile First */
+        .benefit-item {
+            text-align: center;
+            padding: 1.5rem 1.25rem;
+            background: white;
+            border-radius: 20px;
+            border: 2px solid rgba(57, 2, 64, 0.08);
+            height: 100%;
+            transition: all 0.4s ease;
             margin-bottom: 1rem;
         }
 
-        .footer-description {
-            color: rgba(255, 255, 255, 0.8);
-            margin-bottom: 2rem;
-            line-height: 1.7;
+        @media (min-width: 768px) {
+            .benefit-item {
+                padding: 2rem;
+                margin-bottom: 0;
+            }
+        }
+
+        .benefit-item:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 15px 40px rgba(57, 2, 64, 0.25);
+            border-color: rgba(57, 2, 64, 0.3);
+        }
+
+        .benefit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: block;
+            transition: transform 0.3s ease;
+        }
+
+        @media (min-width: 768px) {
+            .benefit-icon {
+                font-size: 3rem;
+            }
+        }
+
+        .benefit-item:hover .benefit-icon {
+            transform: scale(1.2);
+        }
+
+        .benefit-text {
+            font-weight: 800;
+            margin-bottom: 0.5rem;
+            font-size: 1rem;
+            color: var(--text-dark);
+        }
+
+        @media (min-width: 768px) {
+            .benefit-text {
+                font-size: 1.1rem;
+            }
+        }
+
+        .benefit-subtext {
+            font-size: 0.85rem;
+            color: var(--text-gray);
+            font-weight: 500;
+        }
+
+        @media (min-width: 768px) {
+            .benefit-subtext {
+                font-size: 0.9rem;
+            }
+        }
+
+        /* Footer - Mobile First */
+        .footer {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            color: white;
+            padding: 3rem 0 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer {
+                padding: 4rem 0 2rem;
+            }
+        }
+
+        .footer h3, .footer h5 {
+            font-size: 1.35rem;
+            margin-bottom: 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer h3, .footer h5 {
+                font-size: 1.5rem;
+            }
         }
 
         .footer-links {
@@ -920,60 +871,63 @@
         }
 
         .footer-links a {
-            color: rgba(255, 255, 255, 0.8);
+            color: rgba(255, 255, 255, 0.7);
             text-decoration: none;
-            transition: all 0.3s ease;
-            font-weight: 500;
+            transition: all 0.3s;
+            font-size: 0.9rem;
+        }
+
+        @media (min-width: 768px) {
+            .footer-links a {
+                font-size: 0.95rem;
+            }
         }
 
         .footer-links a:hover {
             color: white;
-            transform: translateX(4px);
+            padding-left: 5px;
         }
 
-        .footer-bottom {
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            margin-top: 3rem;
-        }
-
-        .footer-bottom-text {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.875rem;
-        }
-
-        .social-links {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-        }
-
-        .social-link {
-            width: 50px;
-            height: 50px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            text-decoration: none;
-            font-size: 1.25rem;
+        .social-icon {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.35rem;
             transition: all 0.3s ease;
-            backdrop-filter: blur(10px);
         }
 
-        .social-link:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
+        @media (min-width: 768px) {
+            .social-icon {
+                font-size: 1.5rem;
+            }
         }
 
-        /* Animations */
+        .social-icon:hover {
+            color: #70043a;
+            transform: translateY(-5px) scale(1.1);
+        }
+
+        /* Utility Classes */
+        .lead {
+            font-size: 1.05rem;
+            line-height: 1.7;
+        }
+
+        @media (min-width: 768px) {
+            .lead {
+                font-size: 1.15rem;
+            }
+        }
+
+        @media (min-width: 1200px) {
+            .lead {
+                font-size: 1.25rem;
+            }
+        }
+
+        /* Extra animations */
         @keyframes fadeInUp {
             from {
                 opacity: 0;
-                transform: translateY(40px);
+                transform: translateY(30px);
             }
             to {
                 opacity: 1;
@@ -981,234 +935,24 @@
             }
         }
 
-        @keyframes fadeInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
+        .animate-on-scroll {
+            opacity: 0;
+            animation: fadeInUp 0.8s ease forwards;
         }
 
-        @keyframes fadeInRight {
-            from {
-                opacity: 0;
-                transform: translateX(40px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        @keyframes scaleIn {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        /* Loading States */
-        .loading {
-            opacity: 0.7;
-            pointer-events: none;
-        }
-
-        .spinner-border-sm {
-            width: 1rem;
-            height: 1rem;
-        }
-
-        /* Success/Error States */
-        .alert {
-            border-radius: 12px;
-            border: none;
-            font-weight: 500;
-        }
-
-        .alert-success {
-            background: rgba(16, 185, 129, 0.1);
-            color: var(--success);
-            border-left: 4px solid var(--success);
-        }
-
-        .alert-danger {
-            background: rgba(239, 68, 68, 0.1);
-            color: var(--danger);
-            border-left: 4px solid var(--danger);
-        }
-
-        /* Mobile Optimizations */
-        @media (max-width: 768px) {
-            .hero {
-                padding: 8rem 0 6rem;
-            }
-            
-            .section {
-                padding: 4rem 0;
-            }
-            
-            .hero h1 {
-                font-size: 2.5rem;
-                margin-bottom: 1.5rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 1.125rem;
-                margin-bottom: 2rem;
-            }
-            
-            .feature-card,
-            .benefit-card,
-            .ai-feature-card,
-            .testimonial-card {
-                margin-bottom: 2rem;
-            }
-            
-            .step-connector {
-                display: none;
-            }
-            
-            .waitlist-form .d-flex {
-                flex-direction: column;
-                gap: 1rem;
-            }
-            
-            .submit-button {
-                width: 100%;
-            }
-            
-            .benefit-item {
-                padding: 1.5rem;
-            }
-            
-            .stats-section {
-                padding: 3rem 0;
-            }
-            
-            .stat-number {
-                font-size: 2rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .hero {
-                padding: 6rem 0 4rem;
-            }
-            
-            .section {
-                padding: 3rem 0;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .section-title {
-                font-size: 2rem;
-            }
-            
-            .feature-card,
-            .benefit-card,
-            .ai-feature-card,
-            .step-card,
-            .testimonial-card {
-                padding: 2rem 1.5rem;
-            }
-            
-            .feature-icon,
-            .ai-icon {
-                width: 60px;
-                height: 60px;
-                font-size: 1.5rem;
-            }
-            
-            .step-number {
-                width: 60px;
-                height: 60px;
-                font-size: 1.25rem;
-            }
-        }
-
-        /* Accessibility */
-        .keyboard-navigation *:focus {
-            outline: 3px solid var(--primary) !important;
-            outline-offset: 2px !important;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-            * {
-                animation-duration: 0.01ms !important;
-                animation-iteration-count: 1 !important;
-                transition-duration: 0.01ms !important;
-            }
-        }
-
-        @media (prefers-contrast: high) {
-            :root {
-                --border: #000000;
-                --text-gray: #000000;
-                --border-light: #333333;
-            }
-        }
-
-        /* Dark Mode */
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --bg-white: #0f172a;
-                --bg-gray: #1e293b;
-                --text-dark: #f8fafc;
-                --text-gray: #cbd5e1;
-                --border: #334155;
-                --border-light: #475569;
-            }
-            
-            .navbar {
-                background: rgba(15, 23, 42, 0.95) !important;
+        /* Mobile-specific improvements */
+        @media (max-width: 575.98px) {
+            .container {
+                padding-left: 1rem;
+                padding-right: 1rem;
             }
             
             .hero {
-                background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+                padding: 5rem 0 3rem;
             }
             
-            .feature-card,
-            .benefit-card,
-            .testimonial-card,
-            .benefit-item,
-            .step-card {
-                background: #1e293b;
-                border-color: #334155;
-            }
-        }
-
-        /* Print Styles */
-        @media print {
-            .navbar,
-            .footer,
-            .hero-cta,
-            .submit-button,
-            #waitlist,
-            .stats-section {
-                display: none !important;
-            }
-            
-            .section {
-                padding: 2rem 0 !important;
-            }
-            
-            * {
-                background: white !important;
-                color: black !important;
-            }
-            
-            .section-title {
-                color: black !important;
+            .d-flex.gap-3 {
+                gap: 0.75rem !important;
             }
         }
     </style>
@@ -1217,35 +961,18 @@
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#home" aria-label="Bagxtra Home">
-                <span class="text-gradient">Bagxtra</span>
-            </a>
+            <a class="navbar-brand" href="#home">Bagxtra</a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <i class="bi bi-list"></i>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
             </button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="#about" aria-label="About Bagxtra">About</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works" aria-label="How Bagxtra Works">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#benefits" aria-label="Bagxtra Benefits">Benefits</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#ai-features" aria-label="AI Features">AI Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#testimonials" aria-label="Customer Testimonials">Testimonials</a>
-                    </li>
+                    <li class="nav-item"><a class="nav-link" href="#ai-features">AI Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#vendors">Vendors</a></li>
                 </ul>
-                <a href="waitlist.html" class="btn btn-primary" aria-label="Join Waitlist">
-                    <i class="bi bi-rocket-takeoff me-2"></i>Join Waitlist
-                </a>
+                <a href="#waitlist" class="btn btn-gradient">Join Waitlist</a>
             </div>
         </div>
     </nav>
@@ -1254,62 +981,18 @@
     <section class="hero" id="home">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-10 col-xl-8">
-                    <div class="hero-content text-center" data-aos="fade-up">
-                        <div class="hero-badge">
-                            <i class="bi bi-stars me-2"></i>
-                            AI-Powered Peer-to-Peer Logistics Platform
-                        </div>
-                        <h1 class="display-1">
-                            Send items across borders with 
-                            <span class="text-gradient">intelligent matching</span>
-                        </h1>
-                        <p class="hero-subtitle">
-                            Connect with verified travelers through our AI platform. Save up to 80% on international shipping with faster, smarter delivery powered by machine learning.
-                        </p>
-                        <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center align-items-center">
-                            <a href="#waitlist" class="hero-cta">
-                                <i class="bi bi-rocket-takeoff"></i>
-                                Join Early Access
-                                <i class="bi bi-arrow-right"></i>
-                            </a>
-                            <a href="#how-it-works" class="btn btn-outline-primary btn-lg">
-                                <i class="bi bi-play-circle me-2"></i>
-                                Watch Demo
-                            </a>
-                        </div>
+                <div class="col-lg-10 text-center">
+                    <div class="hero-badge">
+                        <i class="bi bi-stars me-2"></i>AI-Powered Peer-to-Peer Logistics
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Stats Section -->
-    <section class="stats-section">
-        <div class="container">
-            <div class="row">
-                <div class="col-6 col-md-3">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="stat-number" data-count="95">0</div>
-                        <div class="stat-label">Success Rate</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="200">
-                        <div class="stat-number" data-count="80">0</div>
-                        <div class="stat-label">Cost Savings</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="300">
-                        <div class="stat-number" data-count="150">0</div>
-                        <div class="stat-label">Countries</div>
-                    </div>
-                </div>
-                <div class="col-6 col-md-3">
-                    <div class="stat-item" data-aos="fade-up" data-aos-delay="400">
-                        <div class="stat-number" data-count="50">0</div>
-                        <div class="stat-label">AI Factors</div>
+                    <h1>Smarter, Safer, and Cheaper International Deliveries</h1>
+                    <p class="hero-subtitle">
+                        Bagxtra connects Shoppers who need items, with Travellers already flying, and Vendors near airports as trusted pick-up/drop-off hubs. Our AI makes the process faster, safer, and more affordable than traditional couriers.
+                    </p>
+                    <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
+                        <a href="#waitlist" class="btn btn-gradient btn-lg">
+                            <i class="bi bi-rocket-takeoff me-2"></i>Join Early Access
+                        </a>
                     </div>
                 </div>
             </div>
@@ -1317,18 +1000,45 @@
     </section>
 
     <!-- About Section -->
-    <section class="section section-gray" id="about">
+    <section class="section" id="about">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Revolutionizing Global Logistics</h2>
-                <p class="section-subtitle">The world's first AI-powered peer-to-peer logistics platform</p>
+            <div class="text-center mb-4 mb-md-5">
+                <h2 class="section-title">About Bagxtra</h2>
+                <p class="section-subtitle">Logistics powered by AI, trust, and community</p>
             </div>
             <div class="row justify-content-center">
                 <div class="col-lg-10">
-                    <div class="text-center" data-aos="fade-up" data-aos-delay="200">
-                        <p class="lead fs-4 lh-lg">
-                            Bagxtra uses cutting-edge machine learning to intelligently connect travelers with shoppers across international borders. Our platform optimizes matching algorithms, predicts delivery success rates, and provides secure transactions—making international item delivery more accessible, reliable, and cost-effective than ever before.
-                        </p>
+                    <p class="lead text-center px-2 px-md-3">
+                        Bagxtra is the world's first AI-powered peer-to-peer delivery network. Instead of relying only on big courier companies, we connect:
+                    </p>
+                    <div class="row g-4 mt-3">
+                        <div class="col-md-4 col-sm-6">
+                            <div class="text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="bi bi-cart3"></i>
+                                </div>
+                                <h5 class="fw-bold">Shoppers</h5>
+                                <p class="text-muted">People who want to buy or receive items from abroad</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-6">
+                            <div class="text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="bi bi-airplane"></i>
+                                </div>
+                                <h5 class="fw-bold">Travellers</h5>
+                                <p class="text-muted">People flying across borders who can carry small items securely</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 col-sm-12">
+                            <div class="text-center">
+                                <div class="feature-icon mx-auto">
+                                    <i class="bi bi-shop"></i>
+                                </div>
+                                <h5 class="fw-bold">Vendors</h5>
+                                <p class="text-muted">Trusted airport-based partners for safe collection and drop-off</p>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -1336,65 +1046,36 @@
     </section>
 
     <!-- Features Section -->
-    <section class="section" id="features">
+    <section class="section bg-light" id="features">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Built for the Future</h2>
-                <p class="section-subtitle">Advanced technology meets human connection for seamless logistics</p>
-            </div>
+            <h2 class="section-title">Built for the Future</h2>
+            <p class="section-subtitle">Advanced technology meets real human connections</p>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card h-100">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
                         <div class="feature-icon">
                             <i class="bi bi-robot"></i>
                         </div>
-                        <h3 class="feature-title">AI-Driven Matching</h3>
-                        <p class="feature-description">Advanced neural networks analyze 50+ compatibility factors to find perfect traveler matches with industry-leading 95% success rates.</p>
+                        <h3 class="feature-title">AI Matching</h3>
+                        <p class="feature-description">We use intelligent algorithms to match shoppers with travellers and vendors along the right routes.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card h-100">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
                         <div class="feature-icon">
                             <i class="bi bi-shield-check"></i>
                         </div>
-                        <h3 class="feature-title">Enterprise Security</h3>
-                        <p class="feature-description">Military-grade encryption, biometric verification, smart escrow payments, and real-time risk assessment ensure maximum security.</p>
+                        <h3 class="feature-title">Secure Platform</h3>
+                        <p class="feature-description">Escrow payments, ID checks, and AI fraud monitoring keep every transaction safe.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card h-100">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
                         <div class="feature-icon">
                             <i class="bi bi-globe2"></i>
                         </div>
                         <h3 class="feature-title">Global Network</h3>
-                        <p class="feature-description">Connect with verified travelers across 150+ countries through our rapidly expanding intelligent network infrastructure.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-card h-100">
-                        <div class="feature-icon">
-                            <i class="bi bi-lightning-charge"></i>
-                        </div>
-                        <h3 class="feature-title">Real-Time Tracking</h3>
-                        <p class="feature-description">GPS precision tracking with automated updates, delivery confirmations, and predictive arrival notifications throughout the journey.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="feature-card h-100">
-                        <div class="feature-icon">
-                            <i class="bi bi-currency-dollar"></i>
-                        </div>
-                        <h3 class="feature-title">Smart Pricing</h3>
-                        <p class="feature-description">Dynamic pricing algorithms optimize costs in real-time, ensuring competitive rates while maximizing traveler earnings and shoppers savings.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="feature-card h-100">
-                        <div class="feature-icon">
-                            <i class="bi bi-chat-dots"></i>
-                        </div>
-                        <h3 class="feature-title">24/7 Support</h3>
-                        <p class="feature-description">Round-the-clock multilingual customer support with AI-powered chatbots and dedicated human agents for complex queries.</p>
+                        <p class="feature-description">A growing community of shoppers, travellers, and vendors across countries.</p>
                     </div>
                 </div>
             </div>
@@ -1402,34 +1083,30 @@
     </section>
 
     <!-- How It Works -->
-    <section class="section section-gray" id="how-it-works">
+    <section class="section" id="how-it-works">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">How It Works</h2>
-                <p class="section-subtitle">Three simple steps to smart international delivery</p>
-            </div>
+            <h2 class="section-title">How Bagxtra Works</h2>
+            <p class="section-subtitle">Three easy steps to smarter international delivery</p>
             <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
+                <div class="col-lg-4 col-md-6">
                     <div class="step-card">
                         <div class="step-number">1</div>
-                        <div class="step-connector d-none d-lg-block"></div>
                         <h3 class="step-title">Create Your Profile</h3>
-                        <p class="step-description">Sign up as a shopper or traveler with our streamlined KYC verification process. Upload documents, verify identity, and set your preferences.</p>
+                        <p class="text-muted">Sign up as a Shopper, Traveller, or Vendor. Quick and secure verification process.</p>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
+                <div class="col-lg-4 col-md-6">
                     <div class="step-card">
                         <div class="step-number">2</div>
-                        <div class="step-connector d-none d-lg-block"></div>
-                        <h3 class="step-title">AI-Powered Matching</h3>
-                        <p class="step-description">Our advanced algorithms analyze routes, timing, capacity, ratings, and 47+ other factors to find the perfect matches with maximum compatibility.</p>
+                        <h3 class="step-title">Get Matched by AI</h3>
+                        <p class="text-muted">Our system looks at routes, timing, and availability to connect you with the best fit.</p>
                     </div>
                 </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
+                <div class="col-lg-4 col-md-12">
                     <div class="step-card">
                         <div class="step-number">3</div>
-                        <h3 class="step-title">Complete & Track</h3>
-                        <p class="step-description">Secure payment through escrow, track your item with real-time GPS updates, receive automated notifications, and confirm delivery.</p>
+                        <h3 class="step-title">Delivery Made Simple</h3>
+                        <p class="text-muted">Track orders, earn money, or provide safe pick-up services—everyone benefits.</p>
                     </div>
                 </div>
             </div>
@@ -1437,270 +1114,282 @@
     </section>
 
     <!-- Benefits Section -->
-    <section class="section" id="benefits">
+    <section class="section bg-light" id="benefits">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Why Choose Bagxtra</h2>
-                <p class="section-subtitle">Unmatched advantages for modern international logistics</p>
-            </div>
+            <h2 class="section-title">Why Choose Bagxtra</h2>
+            <p class="section-subtitle">Better for shoppers, travellers, and vendors</p>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="benefit-card h-100">
-                        <h3 class="benefit-title">5x Faster Delivery</h3>
-                        <p class="benefit-description">AI-optimized routing and traveler matching delivers items significantly faster than traditional shipping methods, with average delivery times of 2-5 days.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <h4 class="fw-bold mb-3">For Shoppers</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Buy from anywhere</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Save big on shipping</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Faster than couriers</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Collect from verified vendors</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="benefit-card h-100">
-                        <h3 class="benefit-title">Up to 80% Savings</h3>
-                        <p class="benefit-description">Smart pricing algorithms and efficient peer-to-peer matching eliminate unnecessary costs, middlemen, and traditional shipping premiums.</p>
+                <div class="col-lg-4 col-md-6">
+                    <div class="benefit-card">
+                        <h4 class="fw-bold mb-3">For Travellers</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Earn extra income per trip</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Use free luggage space</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Drop off at vendors</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>No direct meetings needed</li>
+                        </ul>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="benefit-card h-100">
-                        <h3 class="benefit-title">99% Success Rate</h3>
-                        <p class="benefit-description">Advanced machine learning ensures highly compatible matches and successful deliveries through predictive analytics and behavioral patterns.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="benefit-card h-100">
-                        <h3 class="benefit-title">Predictive Intelligence</h3>
-                        <p class="benefit-description">AI forecasting predicts optimal delivery windows, potential delays, weather impacts, and automatically suggests alternative solutions.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="benefit-card h-100">
-                        <h3 class="benefit-title">Earn While Traveling</h3>
-                        <p class="benefit-description">Travelers earn $150-500 per trip with optimized load planning, route efficiency bonuses, and performance-based incentives.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="benefit-card h-100">
-                        <h3 class="benefit-title">Carbon Neutral</h3>
-                        <p class="benefit-description">Reduce environmental impact by 70% compared to traditional shipping through shared passenger flights and optimized routing algorithms.</p>
+                <div class="col-lg-4 col-md-12">
+                    <div class="benefit-card">
+                        <h4 class="fw-bold mb-3">For Vendors</h4>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Become trusted hubs</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Earn commissions</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Support community</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Airport-based locations</li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- AI Features Section -->
-    <section class="section section-dark" id="ai-features">
+    <!-- AI Features -->
+    <section class="section" id="ai-features">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Powered by Advanced AI</h2>
-                <p class="section-subtitle">Cutting-edge machine learning technology for intelligent peer-to-peer logistics</p>
-            </div>
+            <h2 class="section-title">Powered by AI</h2>
+            <p class="section-subtitle">Smarter logistics made simple</p>
             <div class="row g-4">
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
-                    <div class="ai-feature-card h-100">
-                        <div class="ai-icon">
-                            <i class="bi bi-arrow-clockwise"></i>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-brain"></i>
                         </div>
-                        <h3 class="feature-title">Neural Matching Engine</h3>
-                        <p class="feature-description">Deep learning neural networks analyze 50+ compatibility factors including routes, timing, capacity, ratings, and behavioral patterns for perfect shopper-traveler matching.</p>
+                        <h3 class="feature-title">Smart Matching</h3>
+                        <p class="feature-description">Connects the right shopper, traveller, and vendor automatically.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
-                    <div class="ai-feature-card h-100">
-                        <div class="ai-icon">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
                             <i class="bi bi-graph-up-arrow"></i>
                         </div>
                         <h3 class="feature-title">Predictive Analytics</h3>
-                        <p class="feature-description">Advanced machine learning models forecast delivery success rates, optimal timing, weather impacts, and potential delays with 94% accuracy.</p>
+                        <p class="feature-description">Estimates delivery timelines and spots possible delays.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
-                    <div class="ai-feature-card h-100">
-                        <div class="ai-icon">
-                            <i class="bi bi-lightning-charge-fill"></i>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-lightning-charge"></i>
                         </div>
                         <h3 class="feature-title">Smart Automation</h3>
-                        <p class="feature-description">Intelligent automation handles verification, routing, notifications, payments, and customer support through advanced AI agents and decision trees.</p>
+                        <p class="feature-description">Handles verification, payments, and updates automatically.</p>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
-                    <div class="ai-feature-card h-100">
-                        <div class="ai-icon">
-                            <i class="bi bi-magic"></i>
-                        </div>
-                        <h3 class="feature-title">Dynamic Optimization</h3>
-                        <p class="feature-description">Real-time algorithm adjustments based on performance metrics, user feedback, market conditions, and emerging patterns for continuous improvement.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
-                    <div class="ai-feature-card h-100">
-                        <div class="ai-icon">
-                            <i class="bi bi-shield-fill-check"></i>
-                        </div>
-                        <h3 class="feature-title">Behavioral Security</h3>
-                        <p class="feature-description">AI-powered fraud detection monitors user patterns, transaction anomalies, and suspicious activities to prevent fraud and ensure platform security.</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
-                    <div class="ai-feature-card h-100">
-                        <div class="ai-icon">
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
                             <i class="bi bi-arrow-repeat"></i>
                         </div>
+                        <h3 class="feature-title">Dynamic Optimization</h3>
+                        <p class="feature-description">Adjusts routes in real time for best results.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-shield-fill-check"></i>
+                        </div>
+                        <h3 class="feature-title">Fraud Detection</h3>
+                        <p class="feature-description">Flags suspicious activity instantly for safety.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="bi bi-arrow-clockwise"></i>
+                        </div>
                         <h3 class="feature-title">Continuous Learning</h3>
-                        <p class="feature-description">Self-improving algorithms that enhance matching accuracy, optimize routes, and refine user experience with every transaction and interaction.</p>
+                        <p class="feature-description">The more the community uses Bagxtra, the smarter it gets.</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Testimonials Section -->
-    <section class="section section-gray" id="testimonials">
+    <!-- Vendor Network -->
+    <section class="section bg-light" id="vendors">
         <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">What Our Users Say</h2>
-                <p class="section-subtitle">Real experiences from travelers and shopper worldwide</p>
-            </div>
-            <div class="row g-4">
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="testimonial-card h-100">
-                        <div class="testimonial-text">
-                            "Bagxtra's AI matching is incredible! I saved $400 on shipping my wedding dress from Italy to New York, and it arrived in perfect condition in just 3 days."
-                        </div>
-                        <div class="testimonial-author">Sarah Chen</div>
-                        <div class="testimonial-role">Fashion Designer, New York</div>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="testimonial-card h-100">
-                        <div class="testimonial-text">
-                            "As a frequent business traveler, Bagxtra helps me earn extra income while helping others. I've made over $2,000 in 6 months just carrying items on my regular trips."
-                        </div>
-                        <div class="testimonial-author">Marcus Johnson</div>
-                        <div class="testimonial-role">Management Consultant, London</div>
-                    </div>
-                </div>
-                <div class="col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="testimonial-card h-100">
-                        <div class="testimonial-text">
-                            "The security and tracking features gave me complete peace of mind. My expensive camera equipment was delivered safely from Japan to Germany by a verified traveler."
-                        </div>
-                        <div class="testimonial-author">Klaus Weber</div>
-                        <div class="testimonial-role">Professional Photographer, Berlin</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section" id="faq">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Frequently Asked Questions</h2>
-                <p class="section-subtitle">Everything you need to know about Bagxtra</p>
-            </div>
+            <h2 class="section-title">Vendor Network</h2>
+            <p class="section-subtitle">Safe airport-based pick-up and drop-off points</p>
             <div class="row justify-content-center">
-                <div class="col-lg-8">
-                    <div class="faq-item" data-aos="fade-up" data-aos-delay="100">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How does the AI matching system work?</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            Our AI analyzes 50+ factors including travel routes, timing, capacity, user ratings, item compatibility, and behavioral patterns to match shoppers with the most suitable travelers, ensuring 95% successful deliveries.
-                        </div>
-                    </div>
-                    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What happens if my item gets lost or damaged?</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            All items are covered by comprehensive insurance up to $5,000. In the rare event of loss or damage, we provide full compensation and work with local authorities to recover items when possible.
-                        </div>
-                    </div>
-
-                     <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span> Is my data secure?
-</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            Absolutely. We use end-to-end encryption, biometric verification, and AI-powered fraud detection. Your data is never shared and all transactions are protected by escrow.
-                        </div>
-                    </div>
-
-                    <div class="faq-item" data-aos="fade-up" data-aos-delay="500">
-                        <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span> What countries will you support?
-</span>
-                            <i class="bi bi-chevron-down"></i>
-                        </div>
-                        <div class="faq-answer">
-                            We're launching with major routes between USA, Canada, UK, Nigeria, Ghana, Kenya, and expanding to 50+ countries by end of 2026.
-                    </div>
-
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA/Waitlist Section -->
-    <section class="section section-gray" id="waitlist">
-        <div class="container">
-            <div class="section-header" data-aos="fade-up">
-                <h2 class="section-title">Join the Future of Global Logistics</h2>
-                <p class="section-subtitle">Be among the first to experience AI-powered peer-to-peer international delivery</p>
-            </div>
-            
-            <div class="row justify-content-center mb-5">
-                <div class="col-lg-8">
-                    <form class="waitlist-form" data-aos="fade-up" data-aos-delay="200">
-                        <div class="row g-3">
-                            <div class="col-md-8">
-                                <div class="form-group">
-                                    <input type="email" placeholder="Enter your email address" class="form-control email-input" required aria-label="Email address">
-                                    <div class="invalid-feedback">
-                                        Please enter a valid email address.
-                                    </div>
+                <div class="col-lg-10">
+                    <div class="vendor-bg">
+                        <p class="lead text-center mb-4 px-2 px-md-3">
+                            Bagxtra is building a Vendor Partner Network near airports to support shoppers and travellers.
+                        </p>
+                        <div class="row g-4">
+                            <div class="col-md-4 col-sm-6">
+                                <div class="text-center">
+                                    <i class="bi bi-cart-check" style="font-size: 2.5rem; color: var(--primary);"></i>
+                                    <h5 class="fw-bold mt-3">Shoppers</h5>
+                                    <p class="text-muted">Pick up items at secure vendor locations</p>
                                 </div>
                             </div>
-                            <div class="col-md-4">
-                                <button type="submit" class="btn submit-button w-100">
-                                    <span class="btn-text">Join Waitlist</span>
-                                    
-                                </button>
+                            <div class="col-md-4 col-sm-6">
+                                <div class="text-center">
+                                    <i class="bi bi-box-seam" style="font-size: 2.5rem; color: var(--primary);"></i>
+                                    <h5 class="fw-bold mt-3">Travellers</h5>
+                                    <p class="text-muted">Drop off without meeting people directly</p>
+                                </div>
+                            </div>
+                            <div class="col-md-4 col-sm-12">
+                                <div class="text-center">
+                                    <i class="bi bi-building" style="font-size: 2.5rem; color: var(--primary);"></i>
+                                    <h5 class="fw-bold mt-3">Vendors</h5>
+                                    <p class="text-muted">Earn income offering trusted services</p>
+                                </div>
                             </div>
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="row founding-benefits" data-aos="fade-up" data-aos-delay="400">
-                <div class="col-lg-3 col-md-6 col-6 mb-4">
-                    <div class="benefit-item h-100">
+    <!-- Testimonials -->
+    <section class="section" id="testimonials">
+        <div class="container">
+            <h2 class="section-title">What Our Early Users Are Saying</h2>
+            <p class="section-subtitle">From our manual pilot process</p>
+            <div class="row g-4">
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "I was able to get clothes from the UK in less than a week, and I paid much less than DHL. The process felt personal and safe."
+                        </p>
+                        <div class="testimonial-author">Chidinma</div>
+                        <div class="testimonial-role">Shopper, Lagos</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "On my trip back from Canada, I helped deliver 2 packages through Bagxtra's manual system and earned extra cash. It was straightforward and stress-free."
+                        </p>
+                        <div class="testimonial-author">Daniel</div>
+                        <div class="testimonial-role">Traveller, Toronto → Lagos</div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-12">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "I run a small store near the airport, and during the manual trial I acted as a drop-off point. It made the process more secure and convenient for both sides."
+                        </p>
+                        <div class="testimonial-author">Mrs. Ibrahim</div>
+                        <div class="testimonial-role">Vendor Partner, MMIA Lagos</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="section bg-light" id="faq">
+        <div class="container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>When will Bagxtra launch?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We're preparing for a beta launch in 2025. Early members get access before the public.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>How does the AI matching work?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            AI looks at routes, traveller patterns, item type, and timing to find the best fit between shoppers, travellers, and vendors.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>Is my data secure?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            Yes. All information is encrypted, transactions use escrow, and fraud is monitored by AI to ensure maximum security.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What countries will you support?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We're starting with USA ↔ Nigeria, Canada ↔ Ghana, UK ↔ Kenya, and expanding based on demand.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Waitlist Section -->
+    <section class="section" id="waitlist">
+        <div class="container">
+            <h2 class="section-title">Join the Future of Logistics</h2>
+            <p class="section-subtitle">Be among the first to try AI-powered community delivery</p>
+            
+            <form class="waitlist-form mb-4 mb-md-5">
+                <div class="row g-3">
+                    <div class="col-md-8">
+                        <input type="email" class="form-control email-input" placeholder="Enter your email address" required>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn submit-button">
+                            Join Waitlist <i class="bi bi-arrow-right ms-2"></i>
+                        </button>
+                    </div>
+                </div>
+            </form>
+
+            <div class="row g-3">
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="benefit-item">
                         <span class="benefit-icon">🚀</span>
-                        <div class="benefit-text">Priority Access</div>
+                        <div class="benefit-text">Early Access</div>
                         <div class="benefit-subtext">First to try the platform</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6 mb-4">
-                    <div class="benefit-item h-100">
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="benefit-item">
                         <span class="benefit-icon">💰</span>
-                        <div class="benefit-text">50% Discount</div>
-                        <div class="benefit-subtext">Exclusive founding member pricing</div>
+                        <div class="benefit-text">Discount</div>
+                        <div class="benefit-subtext">On first deliveries</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6 mb-4">
-                    <div class="benefit-item h-100">
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="benefit-item">
                         <span class="benefit-icon">👑</span>
                         <div class="benefit-text">Founder Status</div>
-                        <div class="benefit-subtext">Lifetime premium benefits</div>
+                        <div class="benefit-subtext">Recognition & benefits</div>
                     </div>
                 </div>
-                <div class="col-lg-3 col-md-6 col-6 mb-4">
-                    <div class="benefit-item h-100">
+                <div class="col-lg-3 col-md-6 col-6">
+                    <div class="benefit-item">
                         <span class="benefit-icon">🎁</span>
                         <div class="benefit-text">Welcome Package</div>
-                        <div class="benefit-subtext">Exclusive Bagxtra merchandise</div>
+                        <div class="benefit-subtext">Exclusive merchandise</div>
                     </div>
                 </div>
             </div>
@@ -1712,24 +1401,10 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="footer-logo">Bagxtra</div>
-                    <p class="footer-description">
-                        Revolutionizing international logistics through AI-powered peer-to-peer connections. Join thousands of users worldwide who trust Bagxtra for faster, cheaper, smarter deliveries.
+                    <h3 class="fw-bold mb-3 text-white">Bagxtra</h3>
+                    <p class="text-white-50">
+                        Revolutionizing international logistics through AI-powered peer-to-peer connections.
                     </p>
-                    <div class="social-links">
-                        <a href="#" class="social-link" aria-label="Facebook">
-                            <i class="bi bi-facebook"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Twitter">
-                            <i class="bi bi-twitter"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="LinkedIn">
-                            <i class="bi bi-linkedin"></i>
-                        </a>
-                        <a href="#" class="social-link" aria-label="Instagram">
-                            <i class="bi bi-instagram"></i>
-                        </a>
-                    </div>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6 mb-4">
                     <h5 class="text-white mb-3">Platform</h5>
@@ -1738,7 +1413,6 @@
                         <li><a href="#how-it-works">How It Works</a></li>
                         <li><a href="#benefits">Benefits</a></li>
                         <li><a href="#ai-features">AI Features</a></li>
-                        <li><a href="#testimonials">Testimonials</a></li>
                     </ul>
                 </div>
                 <div class="col-lg-2 col-md-3 col-6 mb-4">
@@ -1747,88 +1421,59 @@
                         <li><a href="#faq">FAQ</a></li>
                         <li><a href="#">Help Center</a></li>
                         <li><a href="#">Contact Us</a></li>
-                        <li><a href="#">Safety Guidelines</a></li>
-                        <li><a href="#">Insurance</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-3 col-6 mb-4">
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
                     <h5 class="text-white mb-3">Legal</h5>
                     <ul class="footer-links">
                         <li><a href="#">Privacy Policy</a></li>
                         <li><a href="#">Terms of Service</a></li>
-                        <li><a href="#">Cookie Policy</a></li>
-                        <li><a href="#">Compliance</a></li>
-                        <li><a href="#">Security</a></li>
                     </ul>
                 </div>
-                <div class="col-lg-2 col-md-3 col-6 mb-4">
-                    <h5 class="text-white mb-3">Company</h5>
-                    <ul class="footer-links">
-                        <li><a href="#">Careers</a></li>
-                        <li><a href="#">Press</a></li>
-                        <li><a href="#">Blog</a></li>
-                        <li><a href="#">Partnerships</a></li>
-                        <li><a href="#">Investors</a></li>
-                    </ul>
+                <div class="col-lg-2 col-md-6 col-6 mb-4">
+                    <h5 class="text-white mb-3">Connect</h5>
+                    <div class="d-flex gap-3">
+                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
+                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                    </div>
                 </div>
             </div>
-            <div class="footer-bottom text-center">
-                <p class="footer-bottom-text mb-0">
-                    &copy; 2025 Bagxtra. All rights reserved. Connecting the world through intelligent logistics.
-                    <br>
-                </p>
+            <div class="text-center pt-4 mt-4" style="border-top: 1px solid rgba(255,255,255,0.1);">
+                <p class="text-white-50 mb-0">&copy; 2025 Bagxtra. All rights reserved. Connecting the world through intelligent logistics.</p>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    <!-- AOS Animation JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     
     <script>
-        // Initialize AOS animations
-        AOS.init({
-            duration: 800,
-            easing: 'ease-out-cubic',
-            once: true,
-            offset: 100
-        });
-
         // Navbar scroll effect
-        let lastScrollTop = 0;
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-            
-            if (scrollTop > 100) {
+            if (window.scrollY > 50) {
                 navbar.classList.add('scrolled');
             } else {
                 navbar.classList.remove('scrolled');
             }
-            
-            // Hide/show navbar on scroll
-            if (scrollTop > lastScrollTop && scrollTop > 500) {
-                navbar.style.transform = 'translateY(-100%)';
-            } else {
-                navbar.style.transform = 'translateY(0)';
-            }
-            lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
         });
 
-        // Smooth scrolling for anchor links
+        // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 const target = document.querySelector(this.getAttribute('href'));
                 if (target) {
-                    const offsetTop = target.offsetTop - 100; // Account for fixed navbar
+                    const navbarHeight = document.querySelector('.navbar').offsetHeight;
+                    const offsetTop = target.offsetTop - navbarHeight;
                     window.scrollTo({
                         top: offsetTop,
                         behavior: 'smooth'
                     });
                     
-                    // Close mobile menu if open
+                    // Close mobile menu
                     const navbarCollapse = document.querySelector('.navbar-collapse');
                     if (navbarCollapse.classList.contains('show')) {
                         const bsCollapse = new bootstrap.Collapse(navbarCollapse);
@@ -1838,337 +1483,74 @@
             });
         });
 
-        // Counter animation
-        function animateCounters() {
-            const counters = document.querySelectorAll('[data-count]');
-            const speed = 200;
-
-            counters.forEach(counter => {
-                const updateCount = () => {
-                    const target = parseInt(counter.getAttribute('data-count'));
-                    const count = parseInt(counter.innerText);
-                    const inc = target / speed;
-
-                    if (count < target) {
-                        counter.innerText = Math.ceil(count + inc);
-                        setTimeout(updateCount, 1);
-                    } else {
-                        counter.innerText = target + (counter.closest('.stat-item').querySelector('.stat-label').textContent.includes('Rate') ? '%' : '');
-                    }
-                };
-                updateCount();
-            });
-        }
-
-        // Trigger counter animation when stats section is in view
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting && entry.target.classList.contains('stats-section')) {
-                    animateCounters();
-                }
-            });
-        }, { threshold: 0.5 });
-
-        const statsSection = document.querySelector('.stats-section');
-        if (statsSection) {
-            observer.observe(statsSection);
-        }
-
-        // FAQ toggle functionality
+        // FAQ toggle
         function toggleFAQ(element) {
             const answer = element.nextElementSibling;
             const icon = element.querySelector('i');
             
-            // Close all other FAQs
             document.querySelectorAll('.faq-answer').forEach(ans => {
-                if (ans !== answer) {
+                if (ans !== answer && ans.classList.contains('active')) {
                     ans.classList.remove('active');
                 }
             });
+            
             document.querySelectorAll('.faq-question i').forEach(ic => {
                 if (ic !== icon) {
                     ic.style.transform = 'rotate(0deg)';
                 }
             });
             
-            // Toggle current FAQ
             answer.classList.toggle('active');
             icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
-        // Enhanced form submission with loading states
+        // Form submission
         document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
-            const form = this;
-            const email = form.querySelector('.email-input');
-            const button = form.querySelector('.submit-button');
-            const buttonText = button.querySelector('.btn-text');
-            const buttonIcon = button.querySelector('i');
+            const email = this.querySelector('.email-input');
+            const button = this.querySelector('.submit-button');
             
-            if (email.value && isValidEmail(email.value)) {
-                // Add loading state
+            if (email.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email.value)) {
+                button.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Joining...';
                 button.disabled = true;
-                button.classList.add('loading');
-                buttonText.textContent = 'Joining...';
-                buttonIcon.className = 'bi bi-arrow-clockwise spin ms-2';
                 
-                // Simulate API call
                 setTimeout(() => {
-                    // Success state
-                    button.classList.remove('loading');
-                    button.classList.add('btn-success');
-                    buttonText.textContent = 'Welcome!';
-                    buttonIcon.className = 'bi bi-check-circle ms-2';
+                    button.innerHTML = '<i class="bi bi-check-circle me-2"></i>Welcome!';
+                    button.style.background = 'linear-gradient(135deg, #10B981, #059669)';
                     
-                    // Show success message
-                    showNotification(`Thanks for joining! We'll send updates to ${email.value}`, 'success');
+                    alert(`Thanks for joining! We'll send updates to ${email.value}`);
                     
-                    // Clear form
-                    email.value = '';
-                    email.classList.remove('is-valid');
-                    
-                    // Reset button after 3 seconds
                     setTimeout(() => {
+                        email.value = '';
+                        button.innerHTML = 'Join Waitlist <i class="bi bi-arrow-right ms-2"></i>';
+                        button.style.background = '';
                         button.disabled = false;
-                        button.classList.remove('btn-success');
-                        buttonText.textContent = 'Join Waitlist';
-                        buttonIcon.className = 'bi bi-arrow-right ms-2';
-                    }, 3000);
-                }, 2000);
-            } else {
-                email.classList.add('is-invalid');
-                showNotification('Please enter a valid email address', 'error');
+                    }, 2000);
+                }, 1500);
             }
         });
 
-        // Email validation
-        function isValidEmail(email) {
-            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
-        }
-
-        // Real-time email validation
-        document.querySelector('.email-input').addEventListener('input', function() {
-            const email = this.value;
-            const submitButton = document.querySelector('.submit-button');
-            
-            if (email && isValidEmail(email)) {
-                this.classList.remove('is-invalid');
-                this.classList.add('is-valid');
-                submitButton.disabled = false;
-            } else if (email) {
-                this.classList.remove('is-valid');
-                this.classList.add('is-invalid');
-                submitButton.disabled = true;
-            } else {
-                this.classList.remove('is-valid', 'is-invalid');
-                submitButton.disabled = false;
-            }
-        });
-
-        // Notification system
-        function showNotification(message, type) {
-            const notification = document.createElement('div');
-            notification.className = `alert alert-${type === 'success' ? 'success' : 'danger'} position-fixed`;
-            notification.style.cssText = 'top: 100px; right: 20px; z-index: 9999; min-width: 300px;';
-            notification.innerHTML = `
-                <i class="bi bi-${type === 'success' ? 'check-circle-fill' : 'exclamation-triangle-fill'} me-2"></i>
-                ${message}
-                <button type="button" class="btn-close ms-2" onclick="this.parentElement.remove()"></button>
-            `;
-            document.body.appendChild(notification);
-            
-            // Auto-remove after 5 seconds
-            setTimeout(() => {
-                if (notification.parentElement) {
-                    notification.remove();
-                }
-            }, 5000);
-        }
-
-        // Parallax effect for hero section
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            const hero = document.querySelector('.hero');
-            if (hero) {
-                hero.style.transform = `translateY(${scrolled * 0.1}px)`;
-            }
-        });
-
-        // Add keyboard navigation support
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Tab') {
-                document.body.classList.add('keyboard-navigation');
-            }
-        });
-
-        document.addEventListener('mousedown', function() {
-            document.body.classList.remove('keyboard-navigation');
-        });
-
-        // Intersection Observer for enhanced animations
-        const animationObserver = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('animate');
-                }
-            });
-        }, { 
+        // Animation on scroll
+        const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
-        });
+        };
 
-        // Observe elements for advanced animations
-        document.querySelectorAll('.feature-card, .benefit-card, .ai-feature-card, .testimonial-card').forEach(el => {
-            animationObserver.observe(el);
-        });
-
-        // Enhanced mobile optimizations
-        if ('ontouchstart' in window) {
-            // Add touch feedback for mobile
-            document.querySelectorAll('.btn, .feature-card, .benefit-card').forEach(element => {
-                element.addEventListener('touchstart', function() {
-                    this.style.transform = 'scale(0.98)';
-                });
-                
-                element.addEventListener('touchend', function() {
-                    setTimeout(() => {
-                        this.style.transform = '';
-                    }, 150);
-                });
-            });
-        }
-
-        // Progressive Web App features
-        let deferredPrompt;
-        window.addEventListener('beforeinstallprompt', (e) => {
-            e.preventDefault();
-            deferredPrompt = e;
-            
-            // Show install prompt after user engagement
-            setTimeout(() => {
-                if (deferredPrompt && window.scrollY > 1000) {
-                    showInstallPrompt();
-                }
-            }, 30000);
-        });
-
-        function showInstallPrompt() {
-            const installBanner = document.createElement('div');
-            installBanner.className = 'alert alert-info position-fixed d-flex justify-content-between align-items-center';
-            installBanner.style.cssText = 'bottom: 20px; left: 20px; right: 20px; z-index: 9999; border-radius: 16px;';
-            installBanner.innerHTML = `
-                <div>
-                    <i class="bi bi-download me-2"></i>
-                    <strong>Install Bagxtra</strong> for a better experience!
-                </div>
-                <div>
-                    <button class="btn btn-primary btn-sm me-2" id="install-btn">Install</button>
-                    <button class="btn-close" onclick="this.closest('.alert').remove()"></button>
-                </div>
-            `;
-            document.body.appendChild(installBanner);
-            
-            document.getElementById('install-btn').addEventListener('click', () => {
-                if (deferredPrompt) {
-                    deferredPrompt.prompt();
-                    deferredPrompt.userChoice.then((choiceResult) => {
-                        deferredPrompt = null;
-                        installBanner.remove();
-                    });
-                }
-            });
-        }
-
-        // Performance optimizations
-        const lazyImages = document.querySelectorAll('img[data-src]');
-        const imageObserver = new IntersectionObserver((entries) => {
+        const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
                 if (entry.isIntersecting) {
-                    const img = entry.target;
-                    img.src = img.dataset.src;
-                    img.classList.remove('lazy');
-                    imageObserver.unobserve(img);
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
                 }
             });
+        }, observerOptions);
+
+        document.querySelectorAll('.feature-card, .benefit-card, .testimonial-card, .step-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'all 0.6s ease';
+            observer.observe(el);
         });
-
-        lazyImages.forEach(img => imageObserver.observe(img));
-
-        // Analytics and tracking (placeholder)
-        function trackEvent(category, action, label) {
-            // Integrate with your analytics service
-            console.log(`Analytics: ${category} - ${action} - ${label}`);
-        }
-
-        // Track button clicks
-        document.querySelectorAll('.btn').forEach(btn => {
-            btn.addEventListener('click', function() {
-                trackEvent('Button', 'Click', this.textContent.trim());
-            });
-        });
-
-        // Service Worker registration for PWA
-        if ('serviceWorker' in navigator) {
-            window.addEventListener('load', () => {
-                // Uncomment when you have a service worker file
-                // navigator.serviceWorker.register('/sw.js');
-            });
-        }
-
-        // Add custom cursor effects for desktop
-        if (window.innerWidth > 1024) {
-            const cursor = document.createElement('div');
-            cursor.className = 'custom-cursor';
-            cursor.style.cssText = `
-                position: fixed;
-                width: 20px;
-                height: 20px;
-                background: var(--primary);
-                border-radius: 50%;
-                pointer-events: none;
-                z-index: 9999;
-                transition: transform 0.1s ease;
-                mix-blend-mode: difference;
-            `;
-            document.body.appendChild(cursor);
-
-            document.addEventListener('mousemove', (e) => {
-                cursor.style.left = e.clientX - 10 + 'px';
-                cursor.style.top = e.clientY - 10 + 'px';
-            });
-
-            document.querySelectorAll('a, button, .feature-card, .benefit-card').forEach(el => {
-                el.addEventListener('mouseenter', () => cursor.style.transform = 'scale(2)');
-                el.addEventListener('mouseleave', () => cursor.style.transform = 'scale(1)');
-            });
-        }
-
-        // Add CSS for spinning animation
-        const style = document.createElement('style');
-        style.textContent = `
-            .spin {
-                animation: spin 1s linear infinite;
-            }
-            @keyframes spin {
-                from { transform: rotate(0deg); }
-                to { transform: rotate(360deg); }
-            }
-            .animate {
-                animation: fadeInUp 0.6s ease-out forwards;
-            }
-        `;
-        document.head.appendChild(style);
-
-        // Console branding
-        console.log(`
-        ╔══════════════════════════════════════╗
-        ║              BAGXTRA                 ║
-        ║     AI-Powered Logistics Platform    ║
-        ║                                      ║
-        ║     🚀 Join our team:               ║
-        ║     careers@bagxtra.com              ║
-        ╚══════════════════════════════════════╝
-        `);
     </script>
 </body>
-</html>
+</html> 
