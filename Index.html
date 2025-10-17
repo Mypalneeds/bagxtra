@@ -58,7 +58,15 @@
     }
   }
   </script>
+  
 
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://cdnjs.cloudflare.com">
+<link rel="dns-prefetch" href="https://cdnjs.cloudflare.com">
+
+<link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css"></noscript>
   <!-- Favicon -->
   <link rel="icon" href="https://bagxtra.netlify.app/assets/images/favicon.ico" type="image/x-icon">
 
@@ -78,7 +86,7 @@
     --secondary: #58012d;
     --accent: #58042f;
     --text-dark: #1F2937;
-    --text-gray: #6B7280;
+    --text-gray: #4B5563; /* Changed from #6B7280 for better contrast */
     --bg-white: #FFFFFF;
     --bg-light: #F9FAFB;
     --gradient-primary: linear-gradient(135deg, #2e013e 0%, #70043a 100%);
@@ -1799,9 +1807,9 @@ img {
         <div class="container">
             <a class="navbar-brand" href="#home">Bagxtra</a>
             
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navbarNav">
+    <span class="navbar-toggler-icon"></span>
+</button>
             
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav mx-auto">
@@ -1846,7 +1854,7 @@ img {
             <div class="row justify-content-center">
                 <div class="col-lg-10 text-center">
                     <div class="hero-badge">
-                        <i class="bi bi-stars me-2"></i>AI-Powered Peer-to-Peer Logistics
+                        <i class="bi bi-stars me-2" aria-hidden="true"></i>AI-Powered Peer-to-Peer Logistics
                     </div>
                     <h1>Smarter, Safer, and Cheaper International Deliveries</h1>
                     <p class="hero-subtitle">
@@ -2194,18 +2202,19 @@ img {
             <h2 class="section-title">Join the Future of Logistics</h2>
             <p class="section-subtitle">Be among the first to try AI-powered community delivery</p>
             
-            <form class="waitlist-form mb-4 mb-md-5">
-                <div class="row g-3">
-                    <div class="col-md-8">
-                        <input type="email" class="form-control email-input" placeholder="Enter your email address" required>
-                    </div>
-                    <div class="col-md-4">
-                        <button type="submit" class="btn submit-button">
-                            Join Waitlist <i class="bi bi-arrow-right ms-2"></i>
-                        </button>
-                    </div>
-                </div>
-            </form>
+           <form class="waitlist-form mb-4 mb-md-5" aria-label="Join waitlist form">
+    <div class="row g-3">
+        <div class="col-md-8">
+            <label for="mainEmail" class="visually-hidden">Email address</label>
+            <input type="email" id="mainEmail" class="form-control email-input" placeholder="Enter your email address" required aria-required="true">
+        </div>
+        <div class="col-md-4">
+            <button type="submit" class="btn submit-button" aria-label="Join the waitlist">
+                Join Waitlist <i class="bi bi-arrow-right ms-2" aria-hidden="true"></i>
+            </button>
+        </div>
+    </div>
+</form>
 
             <div class="row g-3">
                 <div class="col-lg-3 col-md-6 col-6">
@@ -2277,10 +2286,10 @@ img {
                 <div class="col-lg-2 col-md-6 col-6 mb-4">
                     <h5 class="text-white mb-3">Connect</h5>
                     <div class="d-flex gap-3">
-                        <a href="#" class="social-icon"><i class="bi bi-facebook"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-twitter"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-instagram"></i></a>
-                        <a href="#" class="social-icon"><i class="bi bi-linkedin"></i></a>
+                        <a href="#" class="social-icon" aria-label="Visit our Facebook page"><i class="bi bi-facebook"></i></a>
+<a href="#" class="social-icon" aria-label="Follow us on Twitter"><i class="bi bi-twitter"></i></a>
+<a href="#" class="social-icon" aria-label="Follow us on Instagram"><i class="bi bi-instagram"></i></a>
+<a href="#" class="social-icon" aria-label="Connect on LinkedIn"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
@@ -2291,8 +2300,7 @@ img {
     </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
-    
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js" defer></script>
     <script>
         // Popup functions
         function openPopup() {
