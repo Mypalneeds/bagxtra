@@ -1,961 +1,1797 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bagxtra - AI-Powered Cross-Border Logistics</title>
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
-    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Primary SEO Meta Tags -->
+  <title>BagXtra | AI-Powered Cross-Border Logistics for Shoppers & Travelers</title>
+  <meta name="description" content="BagXtra is an AI-powered peer-to-peer logistics platform connecting international shoppers with verified travelers for faster, cheaper, and secure cross-border deliveries. Shop globally, ship easily, earn effortlessly.">
+  <meta name="keywords" content="BagXtra, cross-border logistics, AI logistics, peer-to-peer delivery, ship from abroad, international shopping Nigeria, send packages abroad, global delivery, Nigeria delivery startup, shop and ship, global parcel delivery, cheap international shipping, verified travelers, logistics technology, ecommerce logistics, Africa shipping platform, package delivery app, traveler delivery app, AI shipping platform, bagxtra logistics, AI powered cross border delivery, peer logistics network, global package shipping, send parcels Nigeria to USA, buy from USA UK Dubai to Nigeria, fast secure global delivery">
+
+  <meta name="author" content="BagXtra">
+  <meta name="robots" content="index, follow">
+  <meta name="language" content="English">
+  <meta name="revisit-after" content="7 days">
+
+  <!-- Canonical -->
+  <link rel="canonical" href="https://bagxtra.netlify.app/">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:title" content="BagXtra | AI-Powered Cross-Border Logistics for Shoppers & Travelers">
+  <meta property="og:description" content="Shop globally and ship securely with verified travelers. BagXtra uses AI to make cross-border logistics faster, cheaper, and smarter.">
+  <meta property="og:url" content="https://bagxtra.netlify.app/">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="BagXtra">
+  <meta property="og:image" content="https://bagxtra.netlify.app/assets/images/og-image.jpg">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="BagXtra | AI-Powered Cross-Border Logistics for Shoppers & Travelers">
+  <meta name="twitter:description" content="Join the future of cross-border logistics. Shop from any country and get it delivered through verified travelers using BagXtra’s AI-powered platform.">
+  <meta name="twitter:image" content="https://bagxtra.netlify.app/assets/images/og-image.jpg">
+  <meta name="twitter:site" content="@BagXtra">
+
+  <!-- Schema Markup for Rich Snippets -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "BagXtra",
+    "url": "https://bagxtra.netlify.app/",
+    "logo": "https://bagxtra.netlify.app/assets/images/logo.png",
+    "sameAs": [
+      "https://www.facebook.com/BagXtra",
+      "https://www.instagram.com/BagXtra",
+      "https://twitter.com/BagXtra"
+    ],
+    "description": "BagXtra is an AI-powered cross-border logistics platform connecting international shoppers with verified travelers to deliver goods faster, safer, and more affordably.",
+    "founder": {
+      "@type": "Person",
+      "name": "BagXtra Team"
+    },
+    "foundingDate": "2024",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "contactType": "Customer Service",
+      "email": "support@bagxtra.com"
+    }
+  }
+  </script>
+
+  <!-- Favicon -->
+  <link rel="icon" href="https://bagxtra.netlify.app/assets/images/favicon.ico" type="image/x-icon">
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- Bootstrap Icons -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-icons/1.10.0/font/bootstrap-icons.min.css" rel="stylesheet">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+
     <style>
-        :root {
-            --primary: #390240;
-            --secondary: #58012d;
-            --accent: #58042f;
-            --text-dark: #1F2937;
-            --text-gray: #6B7280;
-            --bg-white: #FFFFFF;
-            --bg-light: #F9FAFB;
-            --gradient-primary: linear-gradient(135deg, #2e013e 0%, #70043a 100%);
-            --gradient-soft: linear-gradient(135deg, rgba(57, 2, 64, 0.05) 0%, rgba(88, 1, 45, 0.05) 100%);
-            --gradient-vibrant: linear-gradient(135deg, #390240 0%, #58012d 50%, #70043a 100%);
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            line-height: 1.6;
-            color: var(--text-dark);
-            overflow-x: hidden;
-        }
-
-        /* Navigation - Mobile First */
-        .navbar {
-            background: rgba(255, 255, 255, 0.98) !important;
-            backdrop-filter: blur(20px);
-            padding: 0.75rem 0;
-            box-shadow: 0 2px 20px rgba(57, 2, 64, 0.08);
-            transition: all 0.3s ease;
-        }
-
-        .navbar.scrolled {
-            padding: 0.5rem 0;
-            box-shadow: 0 4px 30px rgba(57, 2, 64, 0.15);
-        }
-
-        .navbar-brand {
-            font-size: 1.5rem;
-            font-weight: 900;
-            background: var(--gradient-vibrant);
-            background-clip: text;
-            -webkit-background-clip: text;
-            color: transparent;
-            -webkit-text-fill-color: transparent;
-            transition: transform 0.3s ease;
-        }
-
-        .navbar-toggler {
-            border: none;
-            padding: 0.5rem;
-            box-shadow: none !important;
-        }
-
-        .navbar-toggler-icon {
-            width: 28px;
-            height: 2px;
-            background: var(--primary);
-            display: block;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before,
-        .navbar-toggler-icon::after {
-            content: '';
-            width: 28px;
-            height: 2px;
-            background: var(--primary);
-            position: absolute;
-            left: 0;
-            transition: all 0.3s ease;
-        }
-
-        .navbar-toggler-icon::before { top: -8px; }
-        .navbar-toggler-icon::after { bottom: -8px; }
-
-        .navbar-collapse {
-            background: white;
-            padding: 1rem;
-            border-radius: 16px;
-            margin-top: 1rem;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        @media (min-width: 992px) {
-            .navbar-collapse {
-                background: transparent;
-                padding: 0;
-                margin-top: 0;
-                box-shadow: none;
-            }
-        }
-
-        .nav-link {
-            color: var(--text-gray) !important;
-            font-weight: 600;
-            transition: all 0.3s;
-            padding: 0.75rem 1rem !important;
-            position: relative;
-        }
-
-        @media (min-width: 992px) {
-            .nav-link::after {
-                content: '';
-                position: absolute;
-                bottom: 0;
-                left: 50%;
-                transform: translateX(-50%);
-                width: 0;
-                height: 2px;
-                background: var(--gradient-primary);
-                transition: width 0.3s ease;
-            }
-
-            .nav-link:hover::after {
-                width: 60%;
-            }
-        }
-
-        .nav-link:hover {
-            color: var(--primary) !important;
-        }
-
-        .btn-gradient {
-            background: var(--gradient-vibrant);
-            color: white;
-            border: none;
-            padding: 0.75rem 2rem;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: all 0.4s ease;
-            box-shadow: 0 4px 15px rgba(57, 2, 64, 0.3);
-            position: relative;
-            overflow: hidden;
-            width: 100%;
-        }
-
-        @media (min-width: 992px) {
-            .btn-gradient {
-                width: auto;
-            }
-        }
-
-        .btn-gradient::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
-            transition: left 0.5s ease;
-        }
-
-        .btn-gradient:hover::before {
-            left: 100%;
-        }
-
-        .btn-gradient:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
-            color: white;
-        }
-
-        /* Hero Section - Mobile First */
-        .hero {
-            padding: 6rem 0 4rem;
-            background: var(--gradient-soft);
-            position: relative;
-            overflow: hidden;
-            margin-top: 60px;
-        }
-
-        @media (min-width: 768px) {
-            .hero {
-                padding: 8rem 0 6rem;
-                margin-top: 76px;
-            }
-        }
-
-        .hero::before {
-            content: '';
-            position: absolute;
-            width: 300px;
-            height: 300px;
-            background: radial-gradient(circle, rgba(57, 2, 64, 0.15), transparent);
-            top: -20%;
-            right: -10%;
-            border-radius: 50%;
-            animation: float 20s ease-in-out infinite;
-        }
-
-        @media (min-width: 768px) {
-            .hero::before {
-                width: 600px;
-                height: 600px;
-            }
-        }
-
-        .hero::after {
-            content: '';
-            position: absolute;
-            width: 200px;
-            height: 200px;
-            background: radial-gradient(circle, rgba(88, 1, 45, 0.1), transparent);
-            bottom: -10%;
-            left: -5%;
-            border-radius: 50%;
-            animation: float 15s ease-in-out infinite reverse;
-        }
-
-        @media (min-width: 768px) {
-            .hero::after {
-                width: 400px;
-                height: 400px;
-            }
-        }
-
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) scale(1); }
-            50% { transform: translate(30px, -30px) scale(1.1); }
-        }
-
-        .hero-badge {
-            background: rgba(57, 2, 64, 0.1);
-            color: var(--primary);
-            padding: 0.6rem 1.25rem;
-            border-radius: 50px;
-            font-size: 0.8rem;
-            font-weight: 700;
-            display: inline-block;
-            margin-bottom: 1.5rem;
-            border: 2px solid rgba(57, 2, 64, 0.2);
-            animation: pulse 3s ease-in-out infinite;
-        }
-
-        @media (min-width: 768px) {
-            .hero-badge {
-                padding: 0.75rem 1.5rem;
-                font-size: 0.875rem;
-            }
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(57, 2, 64, 0.3); }
-            50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(57, 2, 64, 0); }
-        }
-
-        .hero h1 {
-            font-size: 2rem;
-            font-weight: 900;
-            margin-bottom: 1.5rem;
-            line-height: 1.2;
-            background: linear-gradient(135deg, #1F2937 0%, #390240 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            position: relative;
-            z-index: 1;
-        }
-
-        @media (min-width: 768px) {
-            .hero h1 {
-                font-size: 3rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .hero h1 {
-                font-size: 3.75rem;
-            }
-        }
-
-        .hero-subtitle {
-            font-size: 1rem;
-            color: var(--text-gray);
-            margin-bottom: 2rem;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        @media (min-width: 768px) {
-            .hero-subtitle {
-                font-size: 1.125rem;
-                margin-bottom: 2.5rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .hero-subtitle {
-                font-size: 1.25rem;
-            }
-        }
-
-        /* Section Styling - Mobile First */
-        .section {
-            padding: 3rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .section {
-                padding: 4rem 0;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .section {
-                padding: 5rem 0;
-            }
-        }
-
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 900;
-            margin-bottom: 1rem;
-            text-align: center;
-            background: linear-gradient(135deg, #390240 0%, #58012d 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        @media (min-width: 768px) {
-            .section-title {
-                font-size: 2.25rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .section-title {
-                font-size: 2.75rem;
-            }
-        }
-
-        .section-subtitle {
-            color: var(--text-gray);
-            text-align: center;
-            margin-bottom: 2rem;
-            font-size: 1rem;
-            font-weight: 500;
-            padding: 0 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .section-subtitle {
-                font-size: 1.0625rem;
-                margin-bottom: 2.5rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .section-subtitle {
-                font-size: 1.125rem;
-                margin-bottom: 3rem;
-            }
-        }
-
-        /* Cards - Mobile First */
-        .feature-card, .benefit-card {
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 24px;
-            border: 2px solid rgba(57, 2, 64, 0.08);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            height: 100%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .feature-card, .benefit-card {
-                padding: 2.5rem 2rem;
-                margin-bottom: 0;
-            }
-        }
-
-        .feature-card::before, .benefit-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: var(--gradient-soft);
-            opacity: 0;
-            transition: opacity 0.4s ease;
-        }
-
-        .feature-card:hover::before, .benefit-card:hover::before {
-            opacity: 1;
-        }
-
-        .feature-card:hover, .benefit-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(57, 2, 64, 0.25);
-            border-color: rgba(57, 2, 64, 0.3);
-        }
-
-        .feature-card > *, .benefit-card > * {
-            position: relative;
-            z-index: 1;
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-vibrant);
-            border-radius: 18px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            transition: all 0.4s ease;
-            box-shadow: 0 8px 20px rgba(57, 2, 64, 0.3);
-        }
-
-        @media (min-width: 768px) {
-            .feature-icon {
-                width: 70px;
-                height: 70px;
-                font-size: 1.75rem;
-            }
-        }
-
-        .feature-card:hover .feature-icon {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
-        }
-
-        .feature-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        @media (min-width: 768px) {
-            .feature-title {
-                font-size: 1.35rem;
-            }
-        }
-
-        .feature-description {
-            color: var(--text-gray);
-            line-height: 1.7;
-            font-size: 0.95rem;
-        }
-
-        @media (min-width: 768px) {
-            .feature-description {
-                font-size: 1rem;
-            }
-        }
-
-        /* Steps - Mobile First */
-        .step-card {
-            text-align: center;
-            padding: 2rem 1.5rem;
-            transition: all 0.3s ease;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .step-card {
-                padding: 2.5rem 2rem;
-                margin-bottom: 0;
-            }
-        }
-
-        .step-card:hover {
-            transform: scale(1.05);
-        }
-
-        .step-number {
-            width: 60px;
-            height: 60px;
-            background: var(--gradient-vibrant);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 1.5rem;
-            font-size: 1.5rem;
-            font-weight: 900;
-            box-shadow: 0 8px 25px rgba(57, 2, 64, 0.4);
-            transition: all 0.4s ease;
-        }
-
-        @media (min-width: 768px) {
-            .step-number {
-                width: 70px;
-                height: 70px;
-                font-size: 1.75rem;
-            }
-        }
-
-        .step-card:hover .step-number {
-            transform: scale(1.15);
-            box-shadow: 0 12px 35px rgba(57, 2, 64, 0.6);
-        }
-
-        .step-title {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 1rem;
-            color: var(--text-dark);
-        }
-
-        @media (min-width: 768px) {
-            .step-title {
-                font-size: 1.35rem;
-            }
-        }
-
-        /* Vendor Section - Mobile First */
-        .vendor-bg {
-            background: var(--gradient-soft);
-            border-radius: 24px;
-            padding: 2rem 1.5rem;
-            border: 2px solid rgba(57, 2, 64, 0.1);
-        }
-
-        @media (min-width: 768px) {
-            .vendor-bg {
-                padding: 3rem 2.5rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .vendor-bg {
-                padding: 3.5rem 3rem;
-            }
-        }
-
-        /* Testimonials - Mobile First */
-        .testimonial-card {
-            background: white;
-            padding: 2rem 1.5rem;
-            border-radius: 24px;
-            border: 2px solid rgba(57, 2, 64, 0.08);
-            height: 100%;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
-            transition: all 0.4s ease;
-            position: relative;
-            overflow: hidden;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .testimonial-card {
-                padding: 2.5rem 2rem;
-                margin-bottom: 0;
-            }
-        }
-
-        .testimonial-card::before {
-            content: '"';
-            position: absolute;
-            top: -20px;
-            left: 20px;
-            font-size: 80px;
-            color: rgba(57, 2, 64, 0.05);
-            font-weight: 900;
-            line-height: 1;
-        }
-
-        @media (min-width: 768px) {
-            .testimonial-card::before {
-                font-size: 120px;
-            }
-        }
-
-        .testimonial-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 50px rgba(57, 2, 64, 0.25);
-            border-color: rgba(57, 2, 64, 0.3);
-        }
-
-        .testimonial-text {
-            font-style: italic;
-            color: var(--text-gray);
-            margin-bottom: 1.5rem;
-            font-size: 0.95rem;
-            line-height: 1.7;
-            position: relative;
-            z-index: 1;
-        }
-
-        @media (min-width: 768px) {
-            .testimonial-text {
-                font-size: 1rem;
-            }
-        }
-
-        .testimonial-author {
-            font-weight: 800;
-            color: var(--text-dark);
-            font-size: 1.05rem;
-        }
-
-        @media (min-width: 768px) {
-            .testimonial-author {
-                font-size: 1.1rem;
-            }
-        }
-
-        .testimonial-role {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            font-weight: 500;
-        }
-
-        @media (min-width: 768px) {
-            .testimonial-role {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* FAQ - Mobile First */
-        .faq-item {
-            margin-bottom: 1rem;
-        }
-
-        .faq-question {
-            background: white;
-            border: 2px solid rgba(57, 2, 64, 0.1);
-            border-radius: 16px;
-            padding: 1.25rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 700;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            font-size: 0.95rem;
-        }
-
-        @media (min-width: 768px) {
-            .faq-question {
-                padding: 1.5rem;
-                font-size: 1rem;
-            }
-        }
-
-        .faq-question:hover {
-            border-color: var(--primary);
-            background: var(--gradient-soft);
-            box-shadow: 0 6px 20px rgba(57, 2, 64, 0.15);
-            transform: translateX(5px);
-        }
-
-        .faq-question i {
-            transition: transform 0.3s ease;
-            color: var(--primary);
-            font-size: 1.25rem;
-            flex-shrink: 0;
-            margin-left: 1rem;
-        }
-
-        .faq-answer {
-            padding: 1.25rem;
-            color: var(--text-gray);
-            display: none;
-            font-size: 0.9rem;
-            line-height: 1.7;
-        }
-
-        @media (min-width: 768px) {
-            .faq-answer {
-                padding: 1.5rem;
-                font-size: 0.95rem;
-            }
-        }
-
-        .faq-answer.active {
-            display: block;
-            animation: slideDown 0.3s ease;
-        }
-
-        @keyframes slideDown {
-            from { opacity: 0; transform: translateY(-10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-
-        /* Waitlist Form - Mobile First */
-        .waitlist-form {
-            max-width: 700px;
-            margin: 0 auto;
-        }
-
-        .email-input {
-            border: 2px solid rgba(57, 2, 64, 0.2);
-            border-radius: 50px;
-            padding: 1rem 1.5rem;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-            font-weight: 500;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .email-input {
-                padding: 1.125rem 1.625rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .email-input {
-                padding: 1.25rem 1.75rem;
-            }
-        }
-
-        .email-input:focus {
-            border-color: var(--primary);
-            box-shadow: 0 0 0 4px rgba(57, 2, 64, 0.1);
-            outline: none;
-        }
-
-        .submit-button {
-            background: var(--gradient-vibrant);
-            color: white;
-            padding: 1rem 2rem;
-            border: none;
-            border-radius: 50px;
-            font-weight: 700;
-            transition: all 0.4s ease;
-            box-shadow: 0 6px 20px rgba(57, 2, 64, 0.4);
-            font-size: 1rem;
-            width: 100%;
-        }
-
-        @media (min-width: 768px) {
-            .submit-button {
-                padding: 1.125rem 2.25rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .submit-button {
-                padding: 1.25rem 2.5rem;
-            }
-        }
-
-        .submit-button:hover {
-            transform: translateY(-3px);
-            color: white;
-            box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
-        }
-
-        /* Benefits Grid - Mobile First */
-        .benefit-item {
-            text-align: center;
-            padding: 1.5rem 1.25rem;
-            background: white;
-            border-radius: 20px;
-            border: 2px solid rgba(57, 2, 64, 0.08);
-            height: 100%;
-            transition: all 0.4s ease;
-            margin-bottom: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .benefit-item {
-                padding: 2rem;
-                margin-bottom: 0;
-            }
-        }
-
-        .benefit-item:hover {
-            transform: translateY(-8px) scale(1.02);
-            box-shadow: 0 15px 40px rgba(57, 2, 64, 0.25);
-            border-color: rgba(57, 2, 64, 0.3);
-        }
-
-        .benefit-icon {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-            display: block;
-            transition: transform 0.3s ease;
-        }
-
-        @media (min-width: 768px) {
-            .benefit-icon {
-                font-size: 3rem;
-            }
-        }
-
-        .benefit-item:hover .benefit-icon {
-            transform: scale(1.2);
-        }
-
-        .benefit-text {
-            font-weight: 800;
-            margin-bottom: 0.5rem;
-            font-size: 1rem;
-            color: var(--text-dark);
-        }
-
-        @media (min-width: 768px) {
-            .benefit-text {
-                font-size: 1.1rem;
-            }
-        }
-
-        .benefit-subtext {
-            font-size: 0.85rem;
-            color: var(--text-gray);
-            font-weight: 500;
-        }
-
-        @media (min-width: 768px) {
-            .benefit-subtext {
-                font-size: 0.9rem;
-            }
-        }
-
-        /* Footer - Mobile First */
-        .footer {
-            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
-            color: white;
-            padding: 3rem 0 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer {
-                padding: 4rem 0 2rem;
-            }
-        }
-
-        .footer h3, .footer h5 {
-            font-size: 1.35rem;
-            margin-bottom: 1rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer h3, .footer h5 {
-                font-size: 1.5rem;
-            }
-        }
-
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.75rem;
-        }
-
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s;
-            font-size: 0.9rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer-links a {
-                font-size: 0.95rem;
-            }
-        }
-
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-
-        .social-icon {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 1.35rem;
-            transition: all 0.3s ease;
-        }
-
-        @media (min-width: 768px) {
-            .social-icon {
-                font-size: 1.5rem;
-            }
-        }
-
-        .social-icon:hover {
-            color: #70043a;
-            transform: translateY(-5px) scale(1.1);
-        }
-
-        /* Utility Classes */
-        .lead {
-            font-size: 1.05rem;
-            line-height: 1.7;
-        }
-
-        @media (min-width: 768px) {
-            .lead {
-                font-size: 1.15rem;
-            }
-        }
-
-        @media (min-width: 1200px) {
-            .lead {
-                font-size: 1.25rem;
-            }
-        }
-
-        /* Extra animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        .animate-on-scroll {
-            opacity: 0;
-            animation: fadeInUp 0.8s ease forwards;
-        }
-
-        /* Mobile-specific improvements */
-        @media (max-width: 575.98px) {
-            .container {
-                padding-left: 1rem;
-                padding-right: 1rem;
-            }
-            
-            .hero {
-                padding: 5rem 0 3rem;
-            }
-            
-            .d-flex.gap-3 {
-                gap: 0.75rem !important;
-            }
-        }
-    </style>
+    :root {
+    --primary: #390240;
+    --secondary: #58012d;
+    --accent: #58042f;
+    --text-dark: #1F2937;
+    --text-gray: #6B7280;
+    --bg-white: #FFFFFF;
+    --bg-light: #F9FAFB;
+    --gradient-primary: linear-gradient(135deg, #2e013e 0%, #70043a 100%);
+    --gradient-soft: linear-gradient(135deg, rgba(57, 2, 64, 0.05) 0%, rgba(88, 1, 45, 0.05) 100%);
+    --gradient-vibrant: linear-gradient(135deg, #390240 0%, #58012d 50%, #70043a 100%);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    line-height: 1.6;
+    color: var(--text-dark);
+    overflow-x: hidden;
+    width: 100%;
+}
+
+/* Ensure no horizontal scroll */
+html, body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+/* Container adjustments for mobile */
+.container {
+    width: 100%;
+    padding-right: 15px;
+    padding-left: 15px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+@media (max-width: 575.98px) {
+    .container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+        max-width: 100%;
+    }
+}
+
+/* Navigation - Mobile First */
+.navbar {
+    background: rgba(255, 255, 255, 0.98) !important;
+    backdrop-filter: blur(20px);
+    padding: 0.75rem 0;
+    box-shadow: 0 2px 20px rgba(57, 2, 64, 0.08);
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.navbar.scrolled {
+    padding: 0.5rem 0;
+    box-shadow: 0 4px 30px rgba(57, 2, 64, 0.15);
+}
+
+.navbar-brand {
+    font-size: 1.3rem;
+    font-weight: 900;
+    background: var(--gradient-vibrant);
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 576px) {
+    .navbar-brand {
+        font-size: 1.5rem;
+    }
+}
+
+.navbar-toggler {
+    border: none;
+    padding: 0.5rem;
+    box-shadow: none !important;
+    background: transparent;
+}
+
+.navbar-toggler:focus {
+    box-shadow: none !important;
+    outline: none;
+}
+
+.navbar-toggler-icon {
+    width: 25px;
+    height: 2px;
+    background: var(--primary);
+    display: block;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before,
+.navbar-toggler-icon::after {
+    content: '';
+    width: 25px;
+    height: 2px;
+    background: var(--primary);
+    position: absolute;
+    left: 0;
+    transition: all 0.3s ease;
+}
+
+.navbar-toggler-icon::before { top: -7px; }
+.navbar-toggler-icon::after { bottom: -7px; }
+
+.navbar-collapse {
+    background: white;
+    padding: 1rem;
+    border-radius: 16px;
+    margin-top: 1rem;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+}
+
+@media (min-width: 992px) {
+    .navbar-collapse {
+        background: transparent;
+        padding: 0;
+        margin-top: 0;
+        box-shadow: none;
+    }
+}
+
+.nav-link {
+    color: var(--text-gray) !important;
+    font-weight: 600;
+    transition: all 0.3s;
+    padding: 0.75rem 1rem !important;
+    position: relative;
+    font-size: 0.95rem;
+}
+
+@media (min-width: 992px) {
+    .nav-link {
+        font-size: 1rem;
+    }
+    
+    .nav-link::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 0;
+        height: 2px;
+        background: var(--gradient-primary);
+        transition: width 0.3s ease;
+    }
+
+    .nav-link:hover::after {
+        width: 60%;
+    }
+}
+
+.nav-link:hover {
+    color: var(--primary) !important;
+}
+
+.btn-gradient {
+    background: var(--gradient-vibrant);
+    color: white;
+    border: none;
+    padding: 0.75rem 1.5rem;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    box-shadow: 0 4px 15px rgba(57, 2, 64, 0.3);
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 576px) {
+    .btn-gradient {
+        font-size: 1rem;
+        padding: 0.75rem 2rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .btn-gradient {
+        width: auto;
+    }
+}
+
+.btn-gradient::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s ease;
+}
+
+.btn-gradient:hover::before {
+    left: 100%;
+}
+
+.btn-gradient:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
+    color: white;
+}
+
+/* Hero Section - Mobile First */
+.hero {
+    padding: 5rem 0 3rem;
+    background: var(--gradient-soft);
+    position: relative;
+    overflow: hidden;
+    margin-top: 60px;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .hero {
+        padding: 6rem 0 4rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero {
+        padding: 8rem 0 6rem;
+        margin-top: 76px;
+    }
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    width: 250px;
+    height: 250px;
+    background: radial-gradient(circle, rgba(57, 2, 64, 0.15), transparent);
+    top: -15%;
+    right: -15%;
+    border-radius: 50%;
+    animation: float 20s ease-in-out infinite;
+}
+
+@media (min-width: 576px) {
+    .hero::before {
+        width: 300px;
+        height: 300px;
+        right: -10%;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero::before {
+        width: 600px;
+        height: 600px;
+        top: -20%;
+    }
+}
+
+.hero::after {
+    content: '';
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: radial-gradient(circle, rgba(88, 1, 45, 0.1), transparent);
+    bottom: -10%;
+    left: -10%;
+    border-radius: 50%;
+    animation: float 15s ease-in-out infinite reverse;
+}
+
+@media (min-width: 576px) {
+    .hero::after {
+        width: 200px;
+        height: 200px;
+        left: -5%;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero::after {
+        width: 400px;
+        height: 400px;
+    }
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(20px, -20px) scale(1.05); }
+}
+
+@media (min-width: 768px) {
+    @keyframes float {
+        0%, 100% { transform: translate(0, 0) scale(1); }
+        50% { transform: translate(30px, -30px) scale(1.1); }
+    }
+}
+
+.hero-badge {
+    background: rgba(57, 2, 64, 0.1);
+    color: var(--primary);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    display: inline-block;
+    margin-bottom: 1.25rem;
+    border: 2px solid rgba(57, 2, 64, 0.2);
+    animation: pulse 3s ease-in-out infinite;
+}
+
+@media (min-width: 576px) {
+    .hero-badge {
+        padding: 0.6rem 1.25rem;
+        font-size: 0.8rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-badge {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+
+@keyframes pulse {
+    0%, 100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(57, 2, 64, 0.3); }
+    50% { transform: scale(1.02); box-shadow: 0 0 0 10px rgba(57, 2, 64, 0); }
+}
+
+.hero h1 {
+    font-size: 1.75rem;
+    font-weight: 900;
+    margin-bottom: 1.25rem;
+    line-height: 1.2;
+    background: linear-gradient(135deg, #1F2937 0%, #390240 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 576px) {
+    .hero h1 {
+        font-size: 2rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+}
+
+@media (min-width: 992px) {
+    .hero h1 {
+        font-size: 3rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero h1 {
+        font-size: 3.75rem;
+    }
+}
+
+.hero-subtitle {
+    font-size: 0.95rem;
+    color: var(--text-gray);
+    margin-bottom: 1.75rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 576px) {
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .hero-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .hero-subtitle {
+        font-size: 1.25rem;
+    }
+}
+
+/* Button group spacing - Mobile First */
+.d-flex.gap-3 {
+    gap: 0.75rem !important;
+}
+
+@media (min-width: 576px) {
+    .d-flex.gap-3 {
+        gap: 1rem !important;
+    }
+}
+
+/* Section Styling - Mobile First */
+.section {
+    padding: 2.5rem 0;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .section {
+        padding: 3rem 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .section {
+        padding: 4rem 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section {
+        padding: 5rem 0;
+    }
+}
+
+.section-title {
+    font-size: 1.5rem;
+    font-weight: 900;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    background: linear-gradient(135deg, #390240 0%, #58012d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    padding: 0 0.5rem;
+}
+
+@media (min-width: 576px) {
+    .section-title {
+        font-size: 1.75rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-title {
+        font-size: 2.25rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-title {
+        font-size: 2.75rem;
+    }
+}
+
+.section-subtitle {
+    color: var(--text-gray);
+    text-align: center;
+    margin-bottom: 1.75rem;
+    font-size: 0.95rem;
+    font-weight: 500;
+    padding: 0 1rem;
+}
+
+@media (min-width: 576px) {
+    .section-subtitle {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .section-subtitle {
+        font-size: 1.0625rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .section-subtitle {
+        font-size: 1.125rem;
+        margin-bottom: 3rem;
+    }
+}
+
+/* Cards - Mobile First */
+.feature-card, .benefit-card {
+    background: white;
+    padding: 1.75rem 1.25rem;
+    border-radius: 20px;
+    border: 2px solid rgba(57, 2, 64, 0.08);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .feature-card, .benefit-card {
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .feature-card, .benefit-card {
+        padding: 2.5rem 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.feature-card::before, .benefit-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--gradient-soft);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+.feature-card:hover::before, .benefit-card:hover::before {
+    opacity: 1;
+}
+
+.feature-card:hover, .benefit-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(57, 2, 64, 0.2);
+    border-color: rgba(57, 2, 64, 0.3);
+}
+
+@media (min-width: 768px) {
+    .feature-card:hover, .benefit-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(57, 2, 64, 0.25);
+    }
+}
+
+.feature-card > *, .benefit-card > * {
+    position: relative;
+    z-index: 1;
+}
+
+.feature-icon {
+    width: 55px;
+    height: 55px;
+    background: var(--gradient-vibrant);
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    color: white;
+    margin-bottom: 1.25rem;
+    transition: all 0.4s ease;
+    box-shadow: 0 8px 20px rgba(57, 2, 64, 0.3);
+}
+
+@media (min-width: 576px) {
+    .feature-icon {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+        border-radius: 18px;
+    }
+}
+
+@media (min-width: 768px) {
+    .feature-icon {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+}
+
+.feature-card:hover .feature-icon {
+    transform: scale(1.08) rotate(3deg);
+    box-shadow: 0 10px 25px rgba(57, 2, 64, 0.45);
+}
+
+@media (min-width: 768px) {
+    .feature-card:hover .feature-icon {
+        transform: scale(1.1) rotate(5deg);
+        box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
+    }
+}
+
+.feature-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 0.875rem;
+    color: var(--text-dark);
+}
+
+@media (min-width: 576px) {
+    .feature-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .feature-title {
+        font-size: 1.35rem;
+    }
+}
+
+.feature-description {
+    color: var(--text-gray);
+    line-height: 1.7;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 576px) {
+    .feature-description {
+        font-size: 0.95rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .feature-description {
+        font-size: 1rem;
+    }
+}
+
+/* Steps - Mobile First */
+.step-card {
+    text-align: center;
+    padding: 1.75rem 1.25rem;
+    transition: all 0.3s ease;
+    margin-bottom: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .step-card {
+        padding: 2rem 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .step-card {
+        padding: 2.5rem 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.step-card:hover {
+    transform: scale(1.03);
+}
+
+@media (min-width: 768px) {
+    .step-card:hover {
+        transform: scale(1.05);
+    }
+}
+
+.step-number {
+    width: 55px;
+    height: 55px;
+    background: var(--gradient-vibrant);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 1.25rem;
+    font-size: 1.4rem;
+    font-weight: 900;
+    box-shadow: 0 8px 25px rgba(57, 2, 64, 0.4);
+    transition: all 0.4s ease;
+}
+
+@media (min-width: 576px) {
+    .step-number {
+        width: 60px;
+        height: 60px;
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .step-number {
+        width: 70px;
+        height: 70px;
+        font-size: 1.75rem;
+    }
+}
+
+.step-card:hover .step-number {
+    transform: scale(1.1);
+    box-shadow: 0 10px 30px rgba(57, 2, 64, 0.55);
+}
+
+@media (min-width: 768px) {
+    .step-card:hover .step-number {
+        transform: scale(1.15);
+        box-shadow: 0 12px 35px rgba(57, 2, 64, 0.6);
+    }
+}
+
+.step-title {
+    font-size: 1.1rem;
+    font-weight: 800;
+    margin-bottom: 0.875rem;
+    color: var(--text-dark);
+}
+
+@media (min-width: 576px) {
+    .step-title {
+        font-size: 1.2rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .step-title {
+        font-size: 1.35rem;
+    }
+}
+
+/* Vendor Section - Mobile First */
+.vendor-bg {
+    background: var(--gradient-soft);
+    border-radius: 20px;
+    padding: 1.75rem 1.25rem;
+    border: 2px solid rgba(57, 2, 64, 0.1);
+}
+
+@media (min-width: 576px) {
+    .vendor-bg {
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .vendor-bg {
+        padding: 3rem 2.5rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .vendor-bg {
+        padding: 3.5rem 3rem;
+    }
+}
+
+/* Testimonials - Mobile First */
+.testimonial-card {
+    background: white;
+    padding: 1.75rem 1.25rem;
+    border-radius: 20px;
+    border: 2px solid rgba(57, 2, 64, 0.08);
+    height: 100%;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    margin-bottom: 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .testimonial-card {
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonial-card {
+        padding: 2.5rem 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.testimonial-card::before {
+    content: '"';
+    position: absolute;
+    top: -15px;
+    left: 15px;
+    font-size: 60px;
+    color: rgba(57, 2, 64, 0.05);
+    font-weight: 900;
+    line-height: 1;
+}
+
+@media (min-width: 576px) {
+    .testimonial-card::before {
+        font-size: 80px;
+        top: -20px;
+        left: 20px;
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonial-card::before {
+        font-size: 120px;
+    }
+}
+
+.testimonial-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(57, 2, 64, 0.2);
+    border-color: rgba(57, 2, 64, 0.3);
+}
+
+@media (min-width: 768px) {
+    .testimonial-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 50px rgba(57, 2, 64, 0.25);
+    }
+}
+
+.testimonial-text {
+    font-style: italic;
+    color: var(--text-gray);
+    margin-bottom: 1.25rem;
+    font-size: 0.9rem;
+    line-height: 1.7;
+    position: relative;
+    z-index: 1;
+}
+
+@media (min-width: 576px) {
+    .testimonial-text {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonial-text {
+        font-size: 1rem;
+    }
+}
+
+.testimonial-author {
+    font-weight: 800;
+    color: var(--text-dark);
+    font-size: 1rem;
+}
+
+@media (min-width: 576px) {
+    .testimonial-author {
+        font-size: 1.05rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonial-author {
+        font-size: 1.1rem;
+    }
+}
+
+.testimonial-role {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+@media (min-width: 576px) {
+    .testimonial-role {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .testimonial-role {
+        font-size: 0.9rem;
+    }
+}
+
+/* FAQ - Mobile First */
+.faq-item {
+    margin-bottom: 0.875rem;
+}
+
+@media (min-width: 576px) {
+    .faq-item {
+        margin-bottom: 1rem;
+    }
+}
+
+.faq-question {
+    background: white;
+    border: 2px solid rgba(57, 2, 64, 0.1);
+    border-radius: 14px;
+    padding: 1rem 0.875rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 700;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 576px) {
+    .faq-question {
+        padding: 1.25rem;
+        font-size: 0.95rem;
+        border-radius: 16px;
+    }
+}
+
+@media (min-width: 768px) {
+    .faq-question {
+        padding: 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+.faq-question:hover {
+    border-color: var(--primary);
+    background: var(--gradient-soft);
+    box-shadow: 0 6px 20px rgba(57, 2, 64, 0.15);
+    transform: translateX(3px);
+}
+
+@media (min-width: 768px) {
+    .faq-question:hover {
+        transform: translateX(5px);
+    }
+}
+
+.faq-question i {
+    transition: transform 0.3s ease;
+    color: var(--primary);
+    font-size: 1.15rem;
+    flex-shrink: 0;
+    margin-left: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .faq-question i {
+        font-size: 1.25rem;
+        margin-left: 1rem;
+    }
+}
+
+.faq-answer {
+    padding: 1rem 0.875rem;
+    color: var(--text-gray);
+    display: none;
+    font-size: 0.875rem;
+    line-height: 1.7;
+}
+
+@media (min-width: 576px) {
+    .faq-answer {
+        padding: 1.25rem;
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .faq-answer {
+        padding: 1.5rem;
+        font-size: 0.95rem;
+    }
+}
+
+.faq-answer.active {
+    display: block;
+    animation: slideDown 0.3s ease;
+}
+
+@keyframes slideDown {
+    from { opacity: 0; transform: translateY(-10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Waitlist Form - Mobile First */
+.waitlist-form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+.email-input {
+    border: 2px solid rgba(57, 2, 64, 0.2);
+    border-radius: 50px;
+    padding: 0.875rem 1.25rem;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    width: 100%;
+}
+
+@media (min-width: 576px) {
+    .email-input {
+        padding: 1rem 1.5rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .email-input {
+        padding: 1.125rem 1.625rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .email-input {
+        padding: 1.25rem 1.75rem;
+    }
+}
+
+.email-input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(57, 2, 64, 0.1);
+    outline: none;
+}
+
+.submit-button {
+    background: var(--gradient-vibrant);
+    color: white;
+    padding: 0.875rem 1.75rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(57, 2, 64, 0.4);
+    font-size: 0.95rem;
+    width: 100%;
+}
+
+    
+    @media (min-width: 576px) {
+    .submit-button {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .submit-button {
+        padding: 1.125rem 2.25rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .submit-button {
+        padding: 1.25rem 2.5rem;
+    }
+}
+
+.submit-button:hover {
+    transform: translateY(-3px);
+    color: white;
+    box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
+}
+
+/* Benefits Grid - Mobile First */
+.benefit-item {
+    text-align: center;
+    padding: 1.25rem 1rem;
+    background: white;
+    border-radius: 18px;
+    border: 2px solid rgba(57, 2, 64, 0.08);
+    height: 100%;
+    transition: all 0.4s ease;
+    margin-bottom: 0.875rem;
+}
+
+@media (min-width: 576px) {
+    .benefit-item {
+        padding: 1.5rem 1.25rem;
+        border-radius: 20px;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .benefit-item {
+        padding: 2rem;
+        margin-bottom: 0;
+    }
+}
+
+.benefit-item:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 12px 35px rgba(57, 2, 64, 0.2);
+    border-color: rgba(57, 2, 64, 0.25);
+}
+
+@media (min-width: 768px) {
+    .benefit-item:hover {
+        transform: translateY(-8px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(57, 2, 64, 0.25);
+        border-color: rgba(57, 2, 64, 0.3);
+    }
+}
+
+.benefit-icon {
+    font-size: 2.25rem;
+    margin-bottom: 0.875rem;
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+@media (min-width: 576px) {
+    .benefit-icon {
+        font-size: 2.5rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .benefit-icon {
+        font-size: 3rem;
+    }
+}
+
+.benefit-item:hover .benefit-icon {
+    transform: scale(1.15);
+}
+
+@media (min-width: 768px) {
+    .benefit-item:hover .benefit-icon {
+        transform: scale(1.2);
+    }
+}
+
+.benefit-text {
+    font-weight: 800;
+    margin-bottom: 0.375rem;
+    font-size: 0.95rem;
+    color: var(--text-dark);
+}
+
+@media (min-width: 576px) {
+    .benefit-text {
+        font-size: 1rem;
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .benefit-text {
+        font-size: 1.1rem;
+    }
+}
+
+.benefit-subtext {
+    font-size: 0.8rem;
+    color: var(--text-gray);
+    font-weight: 500;
+}
+
+@media (min-width: 576px) {
+    .benefit-subtext {
+        font-size: 0.85rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .benefit-subtext {
+        font-size: 0.9rem;
+    }
+}
+
+/* Footer - Mobile First */
+.footer {
+    background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+    color: white;
+    padding: 2.5rem 0 1.25rem;
+}
+
+@media (min-width: 576px) {
+    .footer {
+        padding: 3rem 0 1.5rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer {
+        padding: 4rem 0 2rem;
+    }
+}
+
+.footer h3, .footer h5 {
+    font-size: 1.2rem;
+    margin-bottom: 0.875rem;
+}
+
+@media (min-width: 576px) {
+    .footer h3, .footer h5 {
+        font-size: 1.35rem;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer h3, .footer h5 {
+        font-size: 1.5rem;
+    }
+}
+
+.footer-links {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links li {
+    margin-bottom: 0.625rem;
+}
+
+@media (min-width: 576px) {
+    .footer-links li {
+        margin-bottom: 0.75rem;
+    }
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.7);
+    text-decoration: none;
+    transition: all 0.3s;
+    font-size: 0.875rem;
+}
+
+@media (min-width: 576px) {
+    .footer-links a {
+        font-size: 0.9rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .footer-links a {
+        font-size: 0.95rem;
+    }
+}
+
+.footer-links a:hover {
+    color: white;
+    padding-left: 5px;
+}
+
+.social-icon {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 1.25rem;
+    transition: all 0.3s ease;
+}
+
+@media (min-width: 576px) {
+    .social-icon {
+        font-size: 1.35rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .social-icon {
+        font-size: 1.5rem;
+    }
+}
+
+.social-icon:hover {
+    color: #70043a;
+    transform: translateY(-5px) scale(1.1);
+}
+
+/* Popup Modal Styles - Mobile First */
+.popup-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    z-index: 9999;
+    align-items: center;
+    justify-content: center;
+    padding: 0.75rem;
+    animation: fadeIn 0.3s ease;
+}
+
+@media (min-width: 576px) {
+    .popup-overlay {
+        padding: 1rem;
+    }
+}
+
+.popup-overlay.active {
+    display: flex;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.popup-content {
+    background: white;
+    border-radius: 20px;
+    padding: 1.75rem 1.25rem;
+    max-width: 500px;
+    width: 100%;
+    position: relative;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+    animation: slideUp 0.4s ease;
+    max-height: 90vh;
+    overflow-y: auto;
+}
+
+@media (min-width: 576px) {
+    .popup-content {
+        padding: 2rem 1.5rem;
+        border-radius: 24px;
+    }
+}
+
+@media (min-width: 768px) {
+    .popup-content {
+        padding: 2.5rem 2rem;
+    }
+}
+
+@keyframes slideUp {
+    from { 
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to { 
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.popup-close {
+    position: absolute;
+    top: 0.75rem;
+    right: 0.75rem;
+    background: rgba(57, 2, 64, 0.1);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    color: var(--primary);
+    font-size: 1.35rem;
+}
+
+@media (min-width: 576px) {
+    .popup-close {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.5rem;
+    }
+}
+
+.popup-close:hover {
+    background: var(--primary);
+    color: white;
+    transform: rotate(90deg);
+}
+
+.popup-title {
+    font-size: 1.35rem;
+    font-weight: 900;
+    margin-bottom: 0.5rem;
+    background: linear-gradient(135deg, #390240 0%, #58012d 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    text-align: center;
+    padding-right: 1.5rem;
+}
+
+@media (min-width: 576px) {
+    .popup-title {
+        font-size: 1.5rem;
+        padding-right: 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .popup-title {
+        font-size: 1.75rem;
+    }
+}
+
+.popup-subtitle {
+    color: var(--text-gray);
+    text-align: center;
+    margin-bottom: 1.75rem;
+    font-size: 0.9rem;
+}
+
+@media (min-width: 576px) {
+    .popup-subtitle {
+        font-size: 0.95rem;
+        margin-bottom: 2rem;
+    }
+}
+
+.popup-form .form-group {
+    margin-bottom: 1.125rem;
+}
+
+@media (min-width: 576px) {
+    .popup-form .form-group {
+        margin-bottom: 1.25rem;
+    }
+}
+
+.popup-form label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    color: var(--text-dark);
+    font-size: 0.875rem;
+}
+
+@media (min-width: 576px) {
+    .popup-form label {
+        font-size: 0.9rem;
+    }
+}
+
+.popup-form input {
+    width: 100%;
+    padding: 0.8rem 1.125rem;
+    border: 2px solid rgba(57, 2, 64, 0.2);
+    border-radius: 12px;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    font-weight: 500;
+}
+
+@media (min-width: 576px) {
+    .popup-form input {
+        padding: 0.875rem 1.25rem;
+        font-size: 1rem;
+    }
+}
+
+.popup-form input:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 0 4px rgba(57, 2, 64, 0.1);
+    outline: none;
+}
+
+.popup-submit {
+    background: var(--gradient-vibrant);
+    color: white;
+    padding: 0.875rem 1.75rem;
+    border: none;
+    border-radius: 50px;
+    font-weight: 700;
+    transition: all 0.4s ease;
+    box-shadow: 0 6px 20px rgba(57, 2, 64, 0.4);
+    font-size: 0.95rem;
+    width: 100%;
+    cursor: pointer;
+    margin-top: 0.5rem;
+}
+
+@media (min-width: 576px) {
+    .popup-submit {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+.popup-submit:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(57, 2, 64, 0.5);
+}
+
+/* Utility Classes */
+.lead {
+    font-size: 1rem;
+    line-height: 1.7;
+}
+
+@media (min-width: 576px) {
+    .lead {
+        font-size: 1.05rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .lead {
+        font-size: 1.15rem;
+    }
+}
+
+@media (min-width: 1200px) {
+    .lead {
+        font-size: 1.25rem;
+    }
+}
+
+/* Extra animations */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-on-scroll {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+/* Row gutters for mobile */
+.row.g-3 {
+    --bs-gutter-x: 0.75rem;
+    --bs-gutter-y: 0.75rem;
+}
+
+@media (min-width: 576px) {
+    .row.g-3 {
+        --bs-gutter-x: 1rem;
+        --bs-gutter-y: 1rem;
+    }
+}
+
+.row.g-4 {
+    --bs-gutter-x: 1rem;
+    --bs-gutter-y: 1rem;
+}
+
+@media (min-width: 576px) {
+    .row.g-4 {
+        --bs-gutter-x: 1.25rem;
+        --bs-gutter-y: 1.25rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .row.g-4 {
+        --bs-gutter-x: 1.5rem;
+        --bs-gutter-y: 1.5rem;
+    }
+}
+
+/* Mobile-specific improvements */
+@media (max-width: 575.98px) {
+    .hero {
+        padding: 4.5rem 0 2.5rem;
+    }
+    
+    /* Ensure text doesn't overflow */
+    h1, h2, h3, h4, h5, h6 {
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    /* Touch-friendly button sizing */
+    .btn, .btn-gradient, .submit-button, .popup-submit {
+        min-height: 44px;
+        touch-action: manipulation;
+    }
+    
+    /* Better spacing for mobile lists */
+    .benefit-card ul li {
+        margin-bottom: 0.625rem;
+        font-size: 0.9rem;
+    }
+    
+    /* Improve readability on small screens */
+    p {
+        font-size: 0.95rem;
+    }
+}
+
+/* Extra small devices (portrait phones, less than 375px) */
+@media (max-width: 374.98px) {
+    .hero h1 {
+        font-size: 1.6rem;
+    }
+    
+    .section-title {
+        font-size: 1.4rem;
+    }
+    
+    .feature-icon, .step-number {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+    
+    .navbar-brand {
+        font-size: 1.2rem;
+    }
+    
+    .btn-gradient, .submit-button {
+        font-size: 0.875rem;
+        padding: 0.75rem 1.25rem;
+    }
+}
+
+/* Landscape mode on mobile */
+@media (max-height: 500px) and (orientation: landscape) {
+    .hero {
+        padding: 3rem 0 2rem;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    .popup-content {
+        max-height: 85vh;
+    }
+}
+
+/* Prevent horizontal scrolling */
+body, html {
+    position: relative;
+}
+
+.container-fluid {
+    padding-right: 15px;
+    padding-left: 15px;
+}
+
+/* Improve touch targets */
+a, button, .faq-question, .nav-link {
+    -webkit-tap-highlight-color: rgba(57, 2, 64, 0.1);
+}
+
+/* Smooth scrolling for all devices */
+html {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+}
+
+/* Better image handling on mobile */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Accessibility improvements for mobile */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High DPI screens */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .feature-icon, .step-number {
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+}
+
+/* Fix for iOS Safari bottom spacing */
+@supports (-webkit-touch-callout: none) {
+    .popup-content {
+        padding-bottom: calc(1.75rem + env(safe-area-inset-bottom));
+    }
+}
+
+/* Ensure buttons are always clickable */
+.btn, button {
+    position: relative;
+    z-index: 1;
+}
+
+/* Better spacing for mobile footer */
+@media (max-width: 767.98px) {
+    .footer .col-lg-2,
+    .footer .col-lg-4,
+    .footer .col-md-3,
+    .footer .col-md-6 {
+        margin-bottom: 1.5rem;
+    }
+    
+    .footer .col-lg-2:last-child,
+    .footer .col-lg-4:last-child {
+        margin-bottom: 1rem;
+    }
+}
+</style>
 </head>
 <body>
     <!-- Navigation -->
@@ -972,10 +1808,37 @@
                     <li class="nav-item"><a class="nav-link" href="#ai-features">AI Features</a></li>
                     <li class="nav-item"><a class="nav-link" href="#vendors">Vendors</a></li>
                 </ul>
-                <a href="#waitlist" class="btn btn-gradient">Join Waitlist</a>
+                <button class="btn btn-gradient" onclick="openPopup()">Join Waitlist</button>
             </div>
         </div>
     </nav>
+
+    <!-- Waitlist Popup -->
+    <div class="popup-overlay" id="waitlistPopup" onclick="closePopupOnOverlay(event)">
+        <div class="popup-content">
+            <button class="popup-close" onclick="closePopup()">&times;</button>
+            <h2 class="popup-title">Join the Waitlist</h2>
+            <p class="popup-subtitle">Be among the first to experience AI-powered logistics</p>
+            
+            <form class="popup-form" id="popupWaitlistForm">
+                <div class="form-group">
+                    <label for="popupName">Full Name</label>
+                    <input type="text" id="popupName" placeholder="Enter your full name" required>
+                </div>
+                <div class="form-group">
+                    <label for="popupEmail">Email Address</label>
+                    <input type="email" id="popupEmail" placeholder="Enter your email" required>
+                </div>
+                <div class="form-group">
+                    <label for="popupPhone">Phone Number</label>
+                    <input type="tel" id="popupPhone" placeholder="Enter your phone number" required>
+                </div>
+                <button type="submit" class="popup-submit">
+                    Join Waitlist <i class="bi bi-arrow-right ms-2"></i>
+                </button>
+            </form>
+        </div>
+    </div>
 
     <!-- Hero Section -->
     <section class="hero" id="home">
@@ -990,9 +1853,9 @@
                         Bagxtra connects Shoppers who need items, with Travellers already flying, and Vendors near airports as trusted pick-up/drop-off hubs. Our AI makes the process faster, safer, and more affordable than traditional couriers.
                     </p>
                     <div class="d-flex flex-column flex-sm-row gap-3 justify-content-center">
-                        <a href="#waitlist" class="btn btn-gradient btn-lg">
+                        <button class="btn btn-gradient btn-lg" onclick="openPopup()">
                             <i class="bi bi-rocket-takeoff me-2"></i>Join Early Access
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -1045,44 +1908,44 @@
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="section bg-light" id="features">
+    <!-- Testimonials (Moved After About) -->
+    <section class="section bg-light" id="testimonials">
         <div class="container">
-            <h2 class="section-title">Built for the Future</h2>
-            <p class="section-subtitle">Advanced technology meets real human connections</p>
+            <h2 class="section-title">What Our Early Users Are Saying</h2>
+            <p class="section-subtitle">From our manual pilot process</p>
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-robot"></i>
-                        </div>
-                        <h3 class="feature-title">AI Matching</h3>
-                        <p class="feature-description">We use intelligent algorithms to match shoppers with travellers and vendors along the right routes.</p>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "I was able to get clothes from the UK in less than a week, and I paid much less than DHL. The process felt personal and safe."
+                        </p>
+                        <div class="testimonial-author">Chidinma</div>
+                        <div class="testimonial-role">Shopper, Lagos</div>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-shield-check"></i>
-                        </div>
-                        <h3 class="feature-title">Secure Platform</h3>
-                        <p class="feature-description">Escrow payments, ID checks, and AI fraud monitoring keep every transaction safe.</p>
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "On my trip back from Canada, I helped deliver 2 packages through Bagxtra's manual system and earned extra cash. It was straightforward and stress-free."
+                        </p>
+                        <div class="testimonial-author">Daniel</div>
+                        <div class="testimonial-role">Traveller, Toronto → Lagos</div>
                     </div>
                 </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="feature-card">
-                        <div class="feature-icon">
-                            <i class="bi bi-globe2"></i>
-                        </div>
-                        <h3 class="feature-title">Global Network</h3>
-                        <p class="feature-description">A growing community of shoppers, travellers, and vendors across countries.</p>
+                <div class="col-lg-4 col-md-12">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">
+                            "I run a small store near the airport, and during the manual trial I acted as a drop-off point. It made the process more secure and convenient for both sides."
+                        </p>
+                        <div class="testimonial-author">Mrs. Ibrahim</div>
+                        <div class="testimonial-role">Vendor Partner, MMIA Lagos</div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works -->
+    <!-- How It Works (Moved After Testimonials) -->
     <section class="section" id="how-it-works">
         <div class="container">
             <h2 class="section-title">How Bagxtra Works</h2>
@@ -1121,34 +1984,43 @@
             <div class="row g-4">
                 <div class="col-lg-4 col-md-6">
                     <div class="benefit-card">
-                        <h4 class="fw-bold mb-3">For Shoppers</h4>
+                        <h4 class="fw-bold mb-3">🛍️ For Shoppers</h4>
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Buy from anywhere</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Save big on shipping</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Faster than couriers</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Collect from verified vendors</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Track every step — real-time updates</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Refund protection if delivery fails</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Skip customs delays — items are hand-carried</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-6">
                     <div class="benefit-card">
-                        <h4 class="fw-bold mb-3">For Travellers</h4>
+                        <h4 class="fw-bold mb-3">✈️ For Travellers</h4>
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Earn extra income per trip</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Use free luggage space</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Drop off at vendors</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>No direct meetings needed</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Earn while you travel</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Get paid directly to your wallet</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Only buy store-bought items — no repackaging</li>
                         </ul>
                     </div>
                 </div>
                 <div class="col-lg-4 col-md-12">
                     <div class="benefit-card">
-                        <h4 class="fw-bold mb-3">For Vendors</h4>
+                        <h4 class="fw-bold mb-3">🏪 For Vendors</h4>
                         <ul class="list-unstyled">
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Become trusted hubs</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Earn commissions</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Support community</li>
                             <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Airport-based locations</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Increase foot traffic to your store</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Get paid per handoff</li>
+                            <li class="mb-2"><i class="bi bi-check-circle-fill me-2" style="color: var(--primary);"></i>Become a trusted BagXtra partner</li>
                         </ul>
                     </div>
                 </div>
@@ -1260,83 +2132,55 @@
         </div>
     </section>
 
-    <!-- Testimonials -->
-    <section class="section" id="testimonials">
-        <div class="container">
-            <h2 class="section-title">What Our Early Users Are Saying</h2>
-            <p class="section-subtitle">From our manual pilot process</p>
-            <div class="row g-4">
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">
-                            "I was able to get clothes from the UK in less than a week, and I paid much less than DHL. The process felt personal and safe."
-                        </p>
-                        <div class="testimonial-author">Chidinma</div>
-                        <div class="testimonial-role">Shopper, Lagos</div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">
-                            "On my trip back from Canada, I helped deliver 2 packages through Bagxtra's manual system and earned extra cash. It was straightforward and stress-free."
-                        </p>
-                        <div class="testimonial-author">Daniel</div>
-                        <div class="testimonial-role">Traveller, Toronto → Lagos</div>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-12">
-                    <div class="testimonial-card">
-                        <p class="testimonial-text">
-                            "I run a small store near the airport, and during the manual trial I acted as a drop-off point. It made the process more secure and convenient for both sides."
-                        </p>
-                        <div class="testimonial-author">Mrs. Ibrahim</div>
-                        <div class="testimonial-role">Vendor Partner, MMIA Lagos</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- FAQ -->
-    <section class="section bg-light" id="faq">
+    <section class="section" id="faq">
         <div class="container">
             <h2 class="section-title">Frequently Asked Questions</h2>
             <div class="row justify-content-center">
                 <div class="col-lg-8">
                     <div class="faq-item">
                         <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>When will Bagxtra launch?</span>
+                            <span>How do I know my item will actually arrive?</span>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            We're preparing for a beta launch in 2025. Early members get access before the public.
+                            Your payment stays in escrow until you confirm delivery. Travelers are verified and must provide photo proof and a unique code at handoff. If something goes wrong, you get refunded.
                         </div>
                     </div>
                     <div class="faq-item">
                         <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>How does the AI matching work?</span>
+                            <span>Do I have to pay upfront for the item I'm delivering?</span>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            AI looks at routes, traveller patterns, item type, and timing to find the best fit between shoppers, travellers, and vendors.
+                            Yes, but shoppers pay first and funds are locked in escrow. Once the item is delivered, your payout (including commission) is released instantly.
                         </div>
                     </div>
                     <div class="faq-item">
                         <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>Is my data secure?</span>
+                            <span>How do I partner with BagXtra as a vendor?</span>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            Yes. All information is encrypted, transactions use escrow, and fraud is monitored by AI to ensure maximum security.
+                            Vendors can list their store or become an official drop-off/pickup partner. We drive traffic to your business and pay you per handoff. Just join the waitlist and we'll reach out.
                         </div>
                     </div>
                     <div class="faq-item">
                         <div class="faq-question" onclick="toggleFAQ(this)">
-                            <span>What countries will you support?</span>
+                            <span>Is this legal and safe in my country?</span>
                             <i class="bi bi-chevron-down"></i>
                         </div>
                         <div class="faq-answer">
-                            We're starting with USA ↔ Nigeria, Canada ↔ Ghana, UK ↔ Kenya, and expanding based on demand.
+                            Yes. We only allow store-bought goods from verified retailers. No personal parcels or unknown items. Travelers are ID verified and we provide customs support.
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question" onclick="toggleFAQ(this)">
+                            <span>What happens if the traveler cancels or my item is delayed?</span>
+                            <i class="bi bi-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            We'll rematch your delivery with the next available verified traveler. If nothing works in your timeframe, we'll refund you or let you wait for a new offer.
                         </div>
                     </div>
                 </div>
@@ -1345,7 +2189,7 @@
     </section>
 
     <!-- Waitlist Section -->
-    <section class="section" id="waitlist">
+    <section class="section bg-light" id="waitlist">
         <div class="container">
             <h2 class="section-title">Join the Future of Logistics</h2>
             <p class="section-subtitle">Be among the first to try AI-powered community delivery</p>
@@ -1450,6 +2294,52 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
     
     <script>
+        // Popup functions
+        function openPopup() {
+            document.getElementById('waitlistPopup').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closePopup() {
+            document.getElementById('waitlistPopup').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        function closePopupOnOverlay(event) {
+            if (event.target === document.getElementById('waitlistPopup')) {
+                closePopup();
+            }
+        }
+
+        // Popup form submission
+        document.getElementById('popupWaitlistForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            const name = document.getElementById('popupName').value;
+            const email = document.getElementById('popupEmail').value;
+            const phone = document.getElementById('popupPhone').value;
+            const button = this.querySelector('.popup-submit');
+            
+            button.innerHTML = '<span class="spinner-border spinner-border-sm me-2"></span>Joining...';
+            button.disabled = true;
+            
+            setTimeout(() => {
+                button.innerHTML = '<i class="bi bi-check-circle me-2"></i>Success!';
+                button.style.background = 'linear-gradient(135deg, #10B981, #059669)';
+                
+                alert(`Thank you for joining the waitlist, ${name}! We'll send updates to ${email}`);
+                
+                setTimeout(() => {
+                    closePopup();
+                    document.getElementById('popupName').value = '';
+                    document.getElementById('popupEmail').value = '';
+                    document.getElementById('popupPhone').value = '';
+                    button.innerHTML = 'Join Waitlist <i class="bi bi-arrow-right ms-2"></i>';
+                    button.style.background = '';
+                    button.disabled = false;
+                }, 1500);
+            }, 1500);
+        });
+
         // Navbar scroll effect
         window.addEventListener('scroll', function() {
             const navbar = document.querySelector('.navbar');
@@ -1463,8 +2353,11 @@
         // Smooth scrolling
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
+                const href = this.getAttribute('href');
+                if (href === '#' || !href.startsWith('#')) return;
+                
                 e.preventDefault();
-                const target = document.querySelector(this.getAttribute('href'));
+                const target = document.querySelector(href);
                 if (target) {
                     const navbarHeight = document.querySelector('.navbar').offsetHeight;
                     const offsetTop = target.offsetTop - navbarHeight;
@@ -1504,7 +2397,7 @@
             icon.style.transform = answer.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
         }
 
-        // Form submission
+        // Main waitlist form submission
         document.querySelector('.waitlist-form').addEventListener('submit', function(e) {
             e.preventDefault();
             const email = this.querySelector('.email-input');
@@ -1551,6 +2444,13 @@
             el.style.transition = 'all 0.6s ease';
             observer.observe(el);
         });
+
+        // Close popup with Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closePopup();
+            }
+        });
     </script>
 </body>
-</html> 
+</html>
